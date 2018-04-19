@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Migrant the blog to hexo.">
+<meta name="keywords" content="jekyll,blog,website,hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Generated Blog">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/05/13/hexo-site-config/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="Migrant the blog to hexo.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-19T05:55:31.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Generated Blog">
+<meta name="twitter:description" content="Migrant the blog to hexo.">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Hexo Generated Blog</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2014/05/16/grammar-checkers/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/05/13/duolingo/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&text=Hexo Generated Blog"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&is_video=false&description=Hexo Generated Blog"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo Generated Blog&body=Check out this article: http://www.quxiaofeng.me/2014/05/13/hexo-site-config/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&name=Hexo Generated Blog&description=&lt;p&gt;Migrant the blog to &lt;a href=&#34;http://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hexo&lt;/a&gt;.&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#My-favourate-feature"><span class="toc-number">1.</span> <span class="toc-text">My favourate feature:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Hexo Generated Blog
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2014-05-13T18:43:54.000Z" itemprop="datePublished">May 14, 2014</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/jekyll/">jekyll</a>, <a class="tag-link" href="/tags/website/">website</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Migrant the blog to <a href="http://hexo.io/" target="_blank" rel="noopener">hexo</a>.</p>
+<a id="more"></a>
+<p>I have been insterested in <a href="http://hexo.io/" target="_blank" rel="noopener"><code>hexo</code></a> for over a year. And finally I got <a href="http://quxiaofeng.me" target="_blank" rel="noopener">this site</a> generated.</p>
+<p>The concerns that delayed my decision are as follows:</p>
+<ol>
+<li><p>The <a href="http://hexo.io/" target="_blank" rel="noopener">hexo</a> site is generated in local. The site has to be uploaded after being generated.</p>
+</li>
+<li><p>The source and the public site are actually two different git repos.</p>
+</li>
+</ol>
+<p>The final kick is the astonishing slow and pretty theme <a href="http://zespia.tw/blog/2012/12/07/hexo-theme-phase/" target="_blank" rel="noopener">Phase</a>. At first, I just want to try and test this theme. I migranted previous jekyll-style markdown files to a <a href="http://zespia.tw/blog/2012/12/07/hexo-theme-phase/" target="_blank" rel="noopener">Phase</a>-themed hexo site. Though the theme is slow in some PCs or browsers, the migrant process is pretty smooth. <a href="https://github.com/tommy351/hexo/wiki/Themes" target="_blank" rel="noopener">The themes</a> are actually abundent comparing with <a href="http://jekyllthemes.org/" target="_blank" rel="noopener">jekyll themes</a>. Then, I continued the migrant and finished it.</p>
+<hr>
+<p>This site is generated in a Ubuntu 14.04. All tools are installed with npm. The dependencies are <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager" target="_blank" rel="noopener"><code>Node.js</code></a>, <a href="http://hexo.io/docs/index.html" target="_blank" rel="noopener"><code>hexo</code></a>, <a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="noopener"><code>hexo-math</code></a> and <a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="noopener"><code>cover</code> theme</a>.</p>
+<hr>
+<p>I did a little fix to the <a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="noopener"><code>cover</code> theme</a>.</p>
+<ol>
+<li>The <a href="https://github.com/quxiaofeng/hexo-themes-cover/commit/8e9ac9dd1748fad96af2ec260b6994fde0c438c7#diff-9f6b1a858766407dc868689e3495f0de" target="_blank" rel="noopener">duoshuo fix</a>.</li>
+</ol>
+<p>I don’t know why previous setting is not working. Therefore, I rewrite it as it is now.</p>
+<ol start="2">
+<li>The <a href="https://github.com/quxiaofeng/hexo-themes-cover/commit/8e9ac9dd1748fad96af2ec260b6994fde0c438c7#diff-9f6b1a858766407dc868689e3495f0de" target="_blank" rel="noopener">addthis/jiathis fix</a> </li>
+</ol>
+<p>In Gao’s <a href="https://github.com/daisygao/hexo-themes-cover" target="_blank" rel="noopener"><code>cover</code> theme</a>, the jiathis uid is not exposed in `_config.yml`. Now it is in <code>theme.addthis.uid</code>.</p>
+<p>And also a page switch <code>page.share</code> is added. This <code>addthis</code> share can be disabled by setting <code>share: false</code>.</p>
+<ol start="3">
+<li>Add multiple icons for the site</li>
+</ol>
+<p>This idea is inspired by the <a href="http://jekyllthemes.org/themes/hmfaysal-omega-theme/" target="_blank" rel="noopener">jekyll HMFAYSAL OMEGA theme</a>. Many icons are added to the site header file. It shows proper icons in different Apple devices.</p>
+<hr>
+<p>For now, I host <a href="https://github.com/quxiaofeng/quxiaofeng.github.io" target="_blank" rel="noopener">the public site</a> and <a href="https://github.com/quxiaofeng/hexo-themes-cover" target="_blank" rel="noopener">the modified theme</a> in Github. The <a href="https://bitbucket.org/quxiaofeng/hexo-migrant" target="_blank" rel="noopener">source of the site</a> is hosted in bitbucket as a private repo.</p>
+<hr>
+<h2 id="My-favourate-feature"><a href="#My-favourate-feature" class="headerlink" title="My favourate feature:"></a>My favourate feature:</h2><ol>
+<li>Automatic deploying to github. The whole deploy process is done automatically after generating. It is also convinient to change to a different repo. I always test on site, not local, because it is actually very different in local. Even you are sure it is fine in local, it still goes wrong in github. I love this feature.</li>
+<li>Gallery (<code>layout: photo</code> and <code>photos: -img1 -img2</code>) page support.</li>
+<li>Changing different theme is easy and independent to the content. All themes are stored in the <code>themes/themename</code>. When using jekyll, changing themes means manually replace all files, images, independent pages and other configure.</li>
+<li>Chinese resources are abundent. The inventor and many users of hexo are Chinese. Therefore, many problems have already been solved.</li>
+<li>The source and the public are stored in separate repos. The good part is that it protect your source. The bad part of it is that you can not learn from others.</li>
+<li>Fancy box (Image gallery in page) support, MathJax (latex equation) support, Jiathis (social share) support, and Duoshuo (social comments) support.</li>
+</ol>
+<hr>
+<p>The fine tuning of this site will be on-going for a while. As for now, I am pretty satisfied.</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#My-favourate-feature"><span class="toc-number">1.</span> <span class="toc-text">My favourate feature:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&text=Hexo Generated Blog"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&is_video=false&description=Hexo Generated Blog"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Hexo Generated Blog&body=Check out this article: http://www.quxiaofeng.me/2014/05/13/hexo-site-config/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&title=Hexo Generated Blog"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/05/13/hexo-site-config/&name=Hexo Generated Blog&description=&lt;p&gt;Migrant the blog to &lt;a href=&#34;http://hexo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hexo&lt;/a&gt;.&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
