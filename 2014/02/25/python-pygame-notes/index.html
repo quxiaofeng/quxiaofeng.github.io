@@ -1,0 +1,790 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="多少恨，昨夜梦魂中。还似旧时游上苑，车如流水马如龙。花月正春风。" />
+
+
+
+  <meta name="keywords" content="python,note," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Xiaofeng QU" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="A little note about Python 3D display, STL file format, and C++ Calling.">
+<meta name="keywords" content="python,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Some Notes on Python and PyGame">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/02/25/python-pygame-notes/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="A little note about Python 3D display, STL file format, and C++ Calling.">
+<meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2018-04-19T04:28:45.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Some Notes on Python and PyGame">
+<meta name="twitter:description" content="A little note about Python 3D display, STL file format, and C++ Calling.">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'hide'
+  };
+</script>
+
+  <title> Some Notes on Python and PyGame | Xiaofeng QU </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en-US">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-50831338-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">Xiaofeng QU</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/." rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-research">
+          <a href="/research" rel="section">
+            <i class="menu-item-icon icon-next-research"></i> <br />
+            Research
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links" rel="section">
+            <i class="menu-item-icon icon-next-links"></i> <br />
+            Links
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-next-about"></i> <br />
+            About
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              Some Notes on Python and PyGame
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2014-02-25T19:28:47+00:00" content="February 25, 2014">
+            February 25, 2014
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/coding/" itemprop="url" rel="index">
+                  <span itemprop="name">coding</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/02/25/python-pygame-notes/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/02/25/python-pygame-notes/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>A little note about Python 3D display, STL file format, and C++ Calling.</p>
+<a id="more"></a>
+<h2 id="Python-FAQ"><a href="#Python-FAQ" class="headerlink" title="Python FAQ"></a><a href="https://docs.google.com/document/d/1jEQ4A8MCJ9Q81LgyHW0uee-IT7A0b-avQoO-VaxiDtU/edit" target="_blank" rel="noopener">Python FAQ</a></h2><h2 id="PyGame-Resources"><a href="#PyGame-Resources" class="headerlink" title="PyGame Resources"></a>PyGame Resources</h2><ul>
+<li><p><a href="http://codentronix.com/2011/04/24/simple-starfield-with-python-and-pygame/" target="_blank" rel="noopener">Simple Starfield with Python and Pygame</a></p>
+</li>
+<li><p><a href="http://codentronix.com/2011/04/14/game-programming-with-python-and-pygame-making-breakout/" target="_blank" rel="noopener">Game Programming with Python and PyGame – Making Breakout</a></p>
+</li>
+<li><p><a href="http://pyopengl.sourceforge.net/" target="_blank" rel="noopener">PyOpenGL</a></p>
+</li>
+<li><p><a href="http://vpython.org/" target="_blank" rel="noopener">VPython</a><br>VPython is the Python programming language plus a 3D graphics module called “visual” originated by David Scherer in 2000. VPython makes it easy to create navigable 3D displays and animations, even for those with limited programming experience. Because it is based on Python, it also has much to offer for experienced programmers and researchers.</p>
+</li>
+<li><p><a href="http://greendalecs.wordpress.com/2012/04/21/3d-programming-in-python-part-1/" target="_blank" rel="noopener">3D Programming in Python</a></p>
+</li>
+<li><p><a href="http://www.vrplumber.com/py3d.py" target="_blank" rel="noopener">Python 3D Software</a></p>
+</li>
+<li><p><a href="http://cyrille.rossant.net/2d-graphics-rendering-tutorial-with-pyopengl/" target="_blank" rel="noopener">2D graphics rendering tutorial with PyOpenGL</a></p>
+</li>
+<li><p><a href="https://wiki.python.org/moin/PythonGameLibraries" target="_blank" rel="noopener">PythonGameLibraries</a></p>
+</li>
+<li><p><a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python/Albow/" target="_blank" rel="noopener">Albow</a><br>A Little Bit of Widgetry for PyGame<br>This is a widget set for creating a GUI using PyGame. It has been developed over the course of several PyWeek game competition entries. I am documenting and releasing it as a separate package so that others may benefit from it, and so that it will be permissible for use in future PyGame entries.</p>
+</li>
+<li><p><a href="http://www.pyqtgraph.org/" target="_blank" rel="noopener">PyQtGraph</a><br><strong>PyQtGraph</strong> is a pure-python graphics and GUI library built on <a href="http://www.riverbankcomputing.co.uk/software/pyqt/intro" target="_blank" rel="noopener">PyQt4</a> / <a href="http://www.pyside.org/" target="_blank" rel="noopener">PySide</a> and <a href="http://www.numpy.org/" target="_blank" rel="noopener">numpy</a>. It is intended for use in mathematics / scientific / engineering applications. Despite being written entirely in python, the library is very fast due to its heavy leverage of numpy for number crunching and <a href="http://doc-snapshot.qt-project.org/4.8/graphicsview.html" target="_blank" rel="noopener">Qt’s GraphicsView framework</a> for fast display. PyQtGraph is distributed under the <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank" rel="noopener">MIT open-source license</a>. </p>
+</li>
+</ul>
+<h2 id="TVTK-STL-Reader-and-Writer"><a href="#TVTK-STL-Reader-and-Writer" class="headerlink" title="TVTK STL Reader and Writer"></a><a href="http://docs.enthought.com/mayavi/tvtk/" target="_blank" rel="noopener">TVTK</a> STL Reader and Writer</h2><ul>
+<li><p>This package is based on <a href="http://www.vtk.org/" target="_blank" rel="noopener">VTK</a>.<br>The <strong>Visualization Toolkit (VTK)</strong> is an open-source, freely available software system for 3D computer graphics, image processing and visualization. VTK consists of a C++ class library and several interpreted interface layers including Tcl/Tk, Java, and Python. Kitware, whose team created and continues to extend the toolkit, offers professional support and consulting services for VTK. VTK supports a wide variety of visualization algorithms including: scalar, vector, tensor, texture, and volumetric methods; and advanced modeling techniques such as: implicit modeling, polygon reduction, mesh smoothing, cutting, contouring, and Delaunay triangulation. VTK has an extensive information visualization framework, has a suite of 3D interaction widgets, supports parallel processing, and integrates with various databases on GUI toolkits such as Qt and Tk. VTK is cross-platform and runs on Linux, Windows, Mac and Unix platforms. </p>
+</li>
+<li><p><a href="http://sebug.net/paper/books/scipydoc/tvtk_intro.html" target="_blank" rel="noopener">TVTK-三维可视化数据</a></p>
+</li>
+<li><p><a href="http://mayavi.sourceforge.net/" target="_blank" rel="noopener">The MayaVi Data Visualizer</a></p>
+</li>
+<li><p><a href="http://junweihuang.info/blog/?p=347" target="_blank" rel="noopener">3D visualization of DXF STL file using mayavi python script</a></p>
+</li>
+<li><p><a href="http://www.vtk.org/Wiki/VTK/Examples/Python/STLReader" target="_blank" rel="noopener">VTK/Examples/Python/STLReader</a></p>
+</li>
+</ul>
+<h2 id="Python-调用外部-DLL"><a href="#Python-调用外部-DLL" class="headerlink" title="Python 调用外部 DLL"></a>Python 调用外部 DLL</h2><ul>
+<li><p><a href="http://www.cnblogs.com/wuchang/archive/2010/04/04/1704456.html" target="_blank" rel="noopener">Python:使用ctypes库调用外部DLL</a><br>详细的例子和流程</p>
+</li>
+<li><p>最简ctypes实例（只能调用DLL文件中的C函数，不能调用C++类内成员函数）</p>
+<p>  from ctypes import *<br>  user32 = windll.LoadLibrary(‘user32.dll’) # load dll<br>  user32.MessageBoxA(0, ‘Ctypes is cool!’, ‘Ctypes’, 0)</p>
+<h1 id="call-message-box-function"><a href="#call-message-box-function" class="headerlink" title="call message box function"></a>call message box function</h1></li>
+<li><p><a href="http://stackoverflow.com/questions/19636210/accessing-ctypes-returned-objects-methods" target="_blank" rel="noopener"><strong>You cannot call C++ instance methods from ctypes</strong>. You will need to export a non-member function that will call the method. It will look like this in C++…</a></p>
+</li>
+<li><p>对于 C 函数 DLL 来说，不知道头文件也是可以调用的</p>
+<ol>
+<li><p>用微软 depends 工具，查询到函数名称。</p>
+</li>
+<li><p>手动编写函数输入输出参数格式，然后调用</p>
+<p>from ctypes import *</p>
+<p>pdi = cdll.LoadLibrary(r’PDI.dll’) # load dll<br>DiscoverCnx=getattr(pdi, “?DiscoverCnx@CPDIdev@@UAE?AW4ePiCommType@@H@Z”)<br>DiscoverCnx.argtypes=[c_void_p];<br>DiscoverCnx.restype=c_int;<br>print DiscoverCnx(c_void_p(0))</p>
+</li>
+</ol>
+</li>
+</ul>
+<p><strong>可惜</strong> 类成员函数调用类内成员变量或函数会造成访问越界。</p>
+<h2 id="HOPE-A-solution-to-call-C-member-function-from-Python"><a href="#HOPE-A-solution-to-call-C-member-function-from-Python" class="headerlink" title="HOPE - A solution to call C++ member function from Python"></a>HOPE - A solution to call C++ member function from Python</h2><h3 id="boost"><a href="#boost" class="headerlink" title="boost"></a><a href="http://www.boost.org/" target="_blank" rel="noopener">boost</a></h3><ul>
+<li><a href="http://www.boost.org/doc/libs/1_55_0/libs/python/doc/tutorial/doc/html/python/exposing.html" target="_blank" rel="noopener">Exposing Classes</a></li>
+</ul>
+<h4 id="Rewrite-the-h-file-to-a-Python-Class"><a href="#Rewrite-the-h-file-to-a-Python-Class" class="headerlink" title="Rewrite the .h file to a Python Class"></a>Rewrite the .h file to a Python Class</h4><p>Consider a C++ class/struct that we want to expose to Python:</p>
+<pre><code>struct World
+{
+    void set(std::string msg) { this-&gt;msg = msg; }
+    std::string greet() { return msg; }
+    std::string msg;
+};
+</code></pre><p>We can expose this to Python by writing a corresponding Boost.Python C++ Wrapper:</p>
+<pre><code>#include &lt;boost/python.hpp&gt;
+
+using namespace boost::python;
+
+BOOST_PYTHON_MODULE(hello)
+{
+    class_&lt;World&gt;(&quot;World&quot;)
+        .def(&quot;greet&quot;, &amp;World::greet)
+        .def(&quot;set&quot;, &amp;World::set)
+    ;
+}
+</code></pre><p>Here, we wrote a C++ class wrapper that exposes the member functions greet and set. Now, after building our module as a shared library, we may use our class World in Python. Here’s a sample Python session:</p>
+<pre><code>&gt;&gt;&gt; import hello
+&gt;&gt;&gt; planet = hello.World()
+&gt;&gt;&gt; planet.set(&apos;howdy&apos;)
+&gt;&gt;&gt; planet.greet()
+&apos;howdy&apos;
+</code></pre><h3 id="Boost-Python"><a href="#Boost-Python" class="headerlink" title="Boost.Python"></a><a href="http://www.boost.org/doc/libs/1_55_0/libs/python/doc/index.html" target="_blank" rel="noopener">Boost.Python</a></h3><p>This is the actual package responsible for the interoperability between C++ and Python</p>
+<h3 id="SWIG"><a href="#SWIG" class="headerlink" title="SWIG"></a><a href="http://www.swig.org/" target="_blank" rel="noopener">SWIG</a></h3><p>SWIG is another possible solution. Maybe later.</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/note/" rel="tag">#note</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/02/26/metric-learning/" rel="prev">Metric Learning</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/01/17/hong-kong-visa/" rel="next">Hong Kong Visa Memo / 更新在港签注流程记录</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="Xiaofeng QU" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Xiaofeng QU</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">多少恨，昨夜梦魂中。还似旧时游上苑，车如流水马如龙。花月正春风。</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">64</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">categories</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">tags</span>
+              
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://www.github.com/quxiaofeng" target="_blank">GitHub</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.twitter.com/quxiaofeng" target="_blank">Twitter</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.facebook.com/quxiaofeng" target="_blank">Facebook</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.douban.com/people/gBlueBird" target="_blank">DouBan</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/quxiaofeng" target="_blank">ZhiHu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-FAQ"><span class="nav-number">1.</span> <span class="nav-text">Python FAQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PyGame-Resources"><span class="nav-number">2.</span> <span class="nav-text">PyGame Resources</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TVTK-STL-Reader-and-Writer"><span class="nav-number">3.</span> <span class="nav-text">TVTK STL Reader and Writer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-调用外部-DLL"><span class="nav-number">4.</span> <span class="nav-text">Python 调用外部 DLL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#call-message-box-function"><span class="nav-number"></span> <span class="nav-text">call message box function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HOPE-A-solution-to-call-C-member-function-from-Python"><span class="nav-number">1.</span> <span class="nav-text">HOPE - A solution to call C++ member function from Python</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#boost"><span class="nav-number">1.1.</span> <span class="nav-text">boost</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Rewrite-the-h-file-to-a-Python-Class"><span class="nav-number">1.1.1.</span> <span class="nav-text">Rewrite the .h file to a Python Class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boost-Python"><span class="nav-number">1.2.</span> <span class="nav-text">Boost.Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SWIG"><span class="nav-number">1.3.</span> <span class="nav-text">SWIG</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2012 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xiaofeng QU</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'quxiaofenggithub';
+      var disqus_identifier = '2014/02/25/python-pygame-notes/';
+      var disqus_title = 'Some Notes on Python and PyGame';
+      var disqus_url = 'http://www.quxiaofeng.me/2014/02/25/python-pygame-notes/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
