@@ -1,0 +1,29 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  Research: /research
+  Links: /links
+  About: /about
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: false
+widgets:
+- category
+- tag: false
+- tagcloud
+- archive
+- recent_posts
+
+# Miscellaneous
+google_analytics:
+favicon: /images/favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
