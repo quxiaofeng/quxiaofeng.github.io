@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xiaofeng QU</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.quxiaofeng.me/"/>
+  <updated>2018-04-21T08:13:19.387Z</updated>
+  <id>http://www.quxiaofeng.me/</id>
+  
+  <author>
+    <name>Xiaofeng QU</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次失败的积分 A failed Integration</title>
+    <link href="http://www.quxiaofeng.me/2017/01/06/a-failed-integration/"/>
+    <id>http://www.quxiaofeng.me/2017/01/06/a-failed-integration/</id>
+    <published>2017-01-06T11:53:38.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Recently, there is a funny photo circulates in the WeChat.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/integral-wifi-password.jpg&quot; alt=&quot;Integration for
+        
+      
+    
+    </summary>
+    
+      <category term="coding" scheme="http://www.quxiaofeng.me/categories/coding/"/>
+    
+    
+      <category term="python" scheme="http://www.quxiaofeng.me/tags/python/"/>
+    
+      <category term="programming" scheme="http://www.quxiaofeng.me/tags/programming/"/>
+    
+      <category term="math" scheme="http://www.quxiaofeng.me/tags/math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Youtube 上放出的 JuliaCon 2016 （MIT）视频与简介</title>
+    <link href="http://www.quxiaofeng.me/2016/06/30/juliacon2016/"/>
+    <id>http://www.quxiaofeng.me/2016/06/30/juliacon2016/</id>
+    <published>2016-06-30T10:16:23.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;公开的讲座视频（来自于 Youtube 上的 JuliaLanguage： &lt;a href=&quot;https://www.youtube.com/user/JuliaLanguage&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="coding" scheme="http://www.quxiaofeng.me/categories/coding/"/>
+    
+    
+      <category term="julia" scheme="http://www.quxiaofeng.me/tags/julia/"/>
+    
+      <category term="programming" scheme="http://www.quxiaofeng.me/tags/programming/"/>
+    
+      <category term="conference" scheme="http://www.quxiaofeng.me/tags/conference/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mastering Julia</title>
+    <link href="http://www.quxiaofeng.me/2016/03/08/mastering-julia/"/>
+    <id>http://www.quxiaofeng.me/2016/03/08/mastering-julia/</id>
+    <published>2016-03-08T14:54:58.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://site.ebrary.com/lib/polyu/reader.action?docID=11080912&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mastering Julia&lt;/a&gt; by &lt;a href=&quot;https://skillsmatter.com/legacy_profile/malcolm-sherrington&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Malcolm Sherrington&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="coding" scheme="http://www.quxiaofeng.me/categories/coding/"/>
+    
+    
+      <category term="tdd" scheme="http://www.quxiaofeng.me/tags/tdd/"/>
+    
+      <category term="machine learning" scheme="http://www.quxiaofeng.me/tags/machine-learning/"/>
+    
+      <category term="julia" scheme="http://www.quxiaofeng.me/tags/julia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Test-Driven Machine Learning</title>
+    <link href="http://www.quxiaofeng.me/2016/02/15/test-driven-machine-learning/"/>
+    <id>http://www.quxiaofeng.me/2016/02/15/test-driven-machine-learning/</id>
+    <published>2016-02-15T03:45:30.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://book.douban.com/subject/26728051/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;测试驱动机器学习&lt;/a&gt; by Justin Bozonier&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="coding" scheme="http://www.quxiaofeng.me/categories/coding/"/>
+    
+    
+      <category term="python" scheme="http://www.quxiaofeng.me/tags/python/"/>
+    
+      <category term="tdd" scheme="http://www.quxiaofeng.me/tags/tdd/"/>
+    
+      <category term="machine learning" scheme="http://www.quxiaofeng.me/tags/machine-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>French Listening Comprehension - Getting to the Airport in France</title>
+    <link href="http://www.quxiaofeng.me/2015/07/13/a-french-listening-video/"/>
+    <id>http://www.quxiaofeng.me/2015/07/13/a-french-listening-video/</id>
+    <published>2015-07-13T15:28:59.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=K0eXpHUi6MA&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;YouTube link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://pan.baidu.com/s/1mgiUovI&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;百度云盘(在线播放)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this lesson, you will improve your listening comprehension skills from a French conversation about getting to the airport. Visit us at Frenchpod101.com, where you will find French lesson notes and many more fantastic lessons and learning resources! Leave us a message while you are there!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="french" scheme="http://www.quxiaofeng.me/tags/french/"/>
+    
+      <category term="listening" scheme="http://www.quxiaofeng.me/tags/listening/"/>
+    
+      <category term="youtube" scheme="http://www.quxiaofeng.me/tags/youtube/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>孙子兵法</title>
+    <link href="http://www.quxiaofeng.me/2015/07/01/the-art-of-war/"/>
+    <id>http://www.quxiaofeng.me/2015/07/01/the-art-of-war/</id>
+    <published>2015-07-01T05:16:43.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我的父亲在新华书店工作，家里最不缺的就是书。从很小的时候我就开始看书，喜欢看书，以看书为玩乐。家里的书多，我也不挑食，所以什么书都看，圣经、论语、故事会，来者不拒。孙子兵法自然也是早早的就读过了。但全文读下来也只记得一句话，“以正合，以奇胜。”也许也是跟个人性格相关，喜欢正面挑战，却又每每用一些奇技淫巧解决问题。正应了那句话，人总是以自己的背景去学习新的知识。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://www.quxiaofeng.me/categories/life/"/>
+    
+    
+      <category term="life" scheme="http://www.quxiaofeng.me/tags/life/"/>
+    
+      <category term="book" scheme="http://www.quxiaofeng.me/tags/book/"/>
+    
+      <category term="classic" scheme="http://www.quxiaofeng.me/tags/classic/"/>
+    
+      <category term="management" scheme="http://www.quxiaofeng.me/tags/management/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快樂唱歌學法語</title>
+    <link href="http://www.quxiaofeng.me/2015/04/13/songs-in-french/"/>
+    <id>http://www.quxiaofeng.me/2015/04/13/songs-in-french/</id>
+    <published>2015-04-13T11:24:17.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚报了个班，”快樂唱歌學法語—日常用語篇”（Lets Sing a Happy French Song - for Daily Living）。感觉挺有效的。原本已经”很熟”的基础语法和简单单词，说不出来，但唱的就容易点。两个老师，协同上课，一个是专注语言，一个专注歌唱。一方面纠正语音，另一方面学习唱歌技巧，挺有意思的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="PolyU" scheme="http://www.quxiaofeng.me/tags/PolyU/"/>
+    
+      <category term="french" scheme="http://www.quxiaofeng.me/tags/french/"/>
+    
+      <category term="course" scheme="http://www.quxiaofeng.me/tags/course/"/>
+    
+      <category term="music" scheme="http://www.quxiaofeng.me/tags/music/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LaTeX cls 文件编写指南</title>
+    <link href="http://www.quxiaofeng.me/2015/01/22/latex-cls-guide/"/>
+    <id>http://www.quxiaofeng.me/2015/01/22/latex-cls-guide/</id>
+    <published>2015-01-22T18:27:05.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;编写 LaTeX cls 文件的方法、步骤与注意事项。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="latex" scheme="http://www.quxiaofeng.me/categories/latex/"/>
+    
+    
+      <category term="PolyU" scheme="http://www.quxiaofeng.me/tags/PolyU/"/>
+    
+      <category term="writing" scheme="http://www.quxiaofeng.me/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《港式中文与标准中文的比较》读书笔记</title>
+    <link href="http://www.quxiaofeng.me/2014/09/16/hong-kong-chinese/"/>
+    <id>http://www.quxiaofeng.me/2014/09/16/hong-kong-chinese/</id>
+    <published>2014-09-16T03:17:08.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;香港书面语的三个等级&quot;&gt;&lt;a href=&quot;#香港书面语的三个等级&quot; class=&quot;headerlink&quot; title=&quot;香港书面语的三个等级&quot;&gt;&lt;/a&gt;香港书面语的三个等级&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;A级 标准中文&lt;/li&gt;
+&lt;li&gt;B级 港式中文&lt;/li&gt;
+&lt;li&gt;C级 粤语中文&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="chinese" scheme="http://www.quxiaofeng.me/tags/chinese/"/>
+    
+      <category term="mandarin" scheme="http://www.quxiaofeng.me/tags/mandarin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零基础免费个人网站搭建手册</title>
+    <link href="http://www.quxiaofeng.me/2014/09/12/building-a-free-blog-site/"/>
+    <id>http://www.quxiaofeng.me/2014/09/12/building-a-free-blog-site/</id>
+    <published>2014-09-12T06:45:00.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;搭建个人网站需要几个步骤。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;li&gt;存储空间&lt;/li&gt;
+&lt;li&gt;界面模板&lt;/li&gt;
+&lt;li&gt;内容撰写&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这里提供一个免费解决方案&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://www.quxiaofeng.me/categories/life/"/>
+    
+    
+      <category term="blog" scheme="http://www.quxiaofeng.me/tags/blog/"/>
+    
+      <category term="website" scheme="http://www.quxiaofeng.me/tags/website/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“你好”是什么意思？</title>
+    <link href="http://www.quxiaofeng.me/2014/08/07/does-nihao-come-from-hello/"/>
+    <id>http://www.quxiaofeng.me/2014/08/07/does-nihao-come-from-hello/</id>
+    <published>2014-08-07T14:35:46.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“你好”是我们现在最常用的问候语，但它具体是什么意思却从来没有想过。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="english" scheme="http://www.quxiaofeng.me/tags/english/"/>
+    
+      <category term="chinese" scheme="http://www.quxiaofeng.me/tags/chinese/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grammar Checkers</title>
+    <link href="http://www.quxiaofeng.me/2014/05/16/grammar-checkers/"/>
+    <id>http://www.quxiaofeng.me/2014/05/16/grammar-checkers/</id>
+    <published>2014-05-16T04:29:58.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Two grammar checkers: grammarly.com and 1checker.com.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="software" scheme="http://www.quxiaofeng.me/tags/software/"/>
+    
+      <category term="writing" scheme="http://www.quxiaofeng.me/tags/writing/"/>
+    
+      <category term="website" scheme="http://www.quxiaofeng.me/tags/website/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo Generated Blog</title>
+    <link href="http://www.quxiaofeng.me/2014/05/13/hexo-site-config/"/>
+    <id>http://www.quxiaofeng.me/2014/05/13/hexo-site-config/</id>
+    <published>2014-05-13T18:43:54.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Migrant the blog to &lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;hexo&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="coding" scheme="http://www.quxiaofeng.me/categories/coding/"/>
+    
+    
+      <category term="jekyll" scheme="http://www.quxiaofeng.me/tags/jekyll/"/>
+    
+      <category term="blog" scheme="http://www.quxiaofeng.me/tags/blog/"/>
+    
+      <category term="website" scheme="http://www.quxiaofeng.me/tags/website/"/>
+    
+      <category term="hexo" scheme="http://www.quxiaofeng.me/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Duolingo</title>
+    <link href="http://www.quxiaofeng.me/2014/05/13/duolingo/"/>
+    <id>http://www.quxiaofeng.me/2014/05/13/duolingo/</id>
+    <published>2014-05-13T18:38:34.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Duolingo is really a good software for languages learning.&lt;br&gt;Currently I am learning three languages in Duolingo, French (le français), German (Deutsch), and Spanish (español, castellano).&lt;br&gt;I have tried Italian (italiano) and Portuguese (português), but I have no time and effort left for these two.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="software" scheme="http://www.quxiaofeng.me/tags/software/"/>
+    
+      <category term="french" scheme="http://www.quxiaofeng.me/tags/french/"/>
+    
+      <category term="german" scheme="http://www.quxiaofeng.me/tags/german/"/>
+    
+      <category term="android" scheme="http://www.quxiaofeng.me/tags/android/"/>
+    
+      <category term="spanish" scheme="http://www.quxiaofeng.me/tags/spanish/"/>
+    
+      <category term="russian" scheme="http://www.quxiaofeng.me/tags/russian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>联合国宪章之敌国条款</title>
+    <link href="http://www.quxiaofeng.me/2014/04/02/un-enemy-state/"/>
+    <id>http://www.quxiaofeng.me/2014/04/02/un-enemy-state/</id>
+    <published>2014-04-02T18:35:51.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Collected information from UN website related to the East China Sea dispute.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://www.quxiaofeng.me/categories/life/"/>
+    
+    
+      <category term="note" scheme="http://www.quxiaofeng.me/tags/note/"/>
+    
+      <category term="politics" scheme="http://www.quxiaofeng.me/tags/politics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Reference Management Tools</title>
+    <link href="http://www.quxiaofeng.me/2014/04/01/reference-management/"/>
+    <id>http://www.quxiaofeng.me/2014/04/01/reference-management/</id>
+    <published>2014-04-01T18:36:18.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;List-of-tools&quot;&gt;&lt;a href=&quot;#List-of-tools&quot; class=&quot;headerlink&quot; title=&quot;List of tools&quot;&gt;&lt;/a&gt;List of tools&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zotero.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Zotero&lt;/a&gt;: Free and payment for a larger storage&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mendeley.com/dashboard/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mendeley&lt;/a&gt;: Free and a payment solution upgrade&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.noteexpress.net/index2.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NoteExpress&lt;/a&gt; (&lt;a href=&quot;http://www.inoteexpress.com/CompanyWeb/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;中文版&lt;/a&gt;): $128/$68 (edu)/￥398/￥198(学生版)。中文文献支持非常好。没有在线同步，只有本地存储。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.refworks.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Refworks&lt;/a&gt;: Library license&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jabref.sourceforge.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jabref&lt;/a&gt;: Bib file editor&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://endnote.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Endnote&lt;/a&gt;: Business license&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="academic" scheme="http://www.quxiaofeng.me/categories/academic/"/>
+    
+    
+      <category term="research" scheme="http://www.quxiaofeng.me/tags/research/"/>
+    
+      <category term="software" scheme="http://www.quxiaofeng.me/tags/software/"/>
+    
+      <category term="writing" scheme="http://www.quxiaofeng.me/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lecture Notes for German Lecture</title>
+    <link href="http://www.quxiaofeng.me/2014/04/01/german-lecture/"/>
+    <id>http://www.quxiaofeng.me/2014/04/01/german-lecture/</id>
+    <published>2014-04-01T05:49:02.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      notes for the german course.
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="note" scheme="http://www.quxiaofeng.me/tags/note/"/>
+    
+      <category term="german" scheme="http://www.quxiaofeng.me/tags/german/"/>
+    
+      <category term="deutsch" scheme="http://www.quxiaofeng.me/tags/deutsch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lecture Note for the French Lecture</title>
+    <link href="http://www.quxiaofeng.me/2014/03/30/french-lecture/"/>
+    <id>http://www.quxiaofeng.me/2014/03/30/french-lecture/</id>
+    <published>2014-03-30T16:00:00.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Based on a french intro course I took in February 2014.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="language" scheme="http://www.quxiaofeng.me/categories/language/"/>
+    
+    
+      <category term="note" scheme="http://www.quxiaofeng.me/tags/note/"/>
+    
+      <category term="french" scheme="http://www.quxiaofeng.me/tags/french/"/>
+    
+      <category term="francais" scheme="http://www.quxiaofeng.me/tags/francais/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PolyU Thesis Template</title>
+    <link href="http://www.quxiaofeng.me/2014/03/23/polyu-thesis-template/"/>
+    <id>http://www.quxiaofeng.me/2014/03/23/polyu-thesis-template/</id>
+    <published>2014-03-23T08:06:04.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A polyu Thesis template&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="latex" scheme="http://www.quxiaofeng.me/categories/latex/"/>
+    
+    
+      <category term="PolyU" scheme="http://www.quxiaofeng.me/tags/PolyU/"/>
+    
+      <category term="writing" scheme="http://www.quxiaofeng.me/tags/writing/"/>
+    
+      <category term="latex" scheme="http://www.quxiaofeng.me/tags/latex/"/>
+    
+      <category term="thesis" scheme="http://www.quxiaofeng.me/tags/thesis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PolyU Beamer Theme</title>
+    <link href="http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/"/>
+    <id>http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/</id>
+    <published>2014-03-22T08:05:03.000Z</published>
+    <updated>2018-04-21T08:13:19.387Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A polyu Beamer template&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="latex" scheme="http://www.quxiaofeng.me/categories/latex/"/>
+    
+    
+      <category term="PolyU" scheme="http://www.quxiaofeng.me/tags/PolyU/"/>
+    
+      <category term="writing" scheme="http://www.quxiaofeng.me/tags/writing/"/>
+    
+      <category term="presentation" scheme="http://www.quxiaofeng.me/tags/presentation/"/>
+    
+      <category term="latex" scheme="http://www.quxiaofeng.me/tags/latex/"/>
+    
+      <category term="beamer" scheme="http://www.quxiaofeng.me/tags/beamer/"/>
+    
+  </entry>
+  
+</feed>
