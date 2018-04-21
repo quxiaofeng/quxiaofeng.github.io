@@ -1,1 +1,349 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="A polyu Beamer template">
+<meta name="keywords" content="PolyU,writing,presentation,latex,beamer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PolyU Beamer Theme">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="A polyu Beamer template">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://i.imgur.com/j1Nl1FR.png">
+<meta property="og:image" content="http://i.imgur.com/4OGjxSA.jpg">
+<meta property="og:image" content="http://i.imgur.com/n9luJJI.jpg">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PolyU Beamer Theme">
+<meta name="twitter:description" content="A polyu Beamer template">
+<meta name="twitter:image" content="http://i.imgur.com/j1Nl1FR.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>PolyU Beamer Theme</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2014/03/23/polyu-thesis-template/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/03/14/elephant-in-the-room/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&text=PolyU Beamer Theme"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&is_video=false&description=PolyU Beamer Theme"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PolyU Beamer Theme&body=Check out this article: http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&name=PolyU Beamer Theme&description=&lt;p&gt;A polyu Beamer template&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-Repo"><span class="toc-number">1.</span> <span class="toc-text">GitHub Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-This-Theme"><span class="toc-number">2.</span> <span class="toc-text">About This Theme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">3.</span> <span class="toc-text">Dependencies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Settings"><span class="toc-number">3.1.</span> <span class="toc-text">Settings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template"><span class="toc-number">4.</span> <span class="toc-text">Template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-the-design"><span class="toc-number">5.</span> <span class="toc-text">About the design</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Layout"><span class="toc-number">5.1.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color"><span class="toc-number">5.2.</span> <span class="toc-text">Color</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COMP-40-Anniversary-Theme-comp-and-forty"><span class="toc-number">6.</span> <span class="toc-text">COMP 40 Anniversary Theme comp and forty</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#comp-and-blue"><span class="toc-number">6.0.1.</span> <span class="toc-text">comp and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#forty-and-blue"><span class="toc-number">6.0.2.</span> <span class="toc-text">forty and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polyu-forty-and-blue"><span class="toc-number">6.0.3.</span> <span class="toc-text">polyu, forty and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polyu-comp-and-red"><span class="toc-number">6.0.4.</span> <span class="toc-text">polyu, comp and red</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PolyU-75-Anniversary-Theme-seventyfive-and-gold"><span class="toc-number">7.</span> <span class="toc-text">PolyU 75 Anniversary Theme seventyfive and gold</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO"><span class="toc-number">8.</span> <span class="toc-text">TODO</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        PolyU Beamer Theme
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2014-03-22T08:05:03.000Z" itemprop="datePublished">March 22, 2014</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/PolyU/">PolyU</a>, <a class="tag-link" href="/tags/beamer/">beamer</a>, <a class="tag-link" href="/tags/latex/">latex</a>, <a class="tag-link" href="/tags/presentation/">presentation</a>, <a class="tag-link" href="/tags/writing/">writing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+<div class="article-gallery">
+    
+    <a class="gallery-item" href="http://i.imgur.com/j1Nl1FR.png" rel="gallery_cjg97hm4r003ein2jfacjn4k1">
+        <img src="http://i.imgur.com/j1Nl1FR.png" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" href="http://i.imgur.com/4OGjxSA.jpg" rel="gallery_cjg97hm4r003ein2jfacjn4k1">
+        <img src="http://i.imgur.com/4OGjxSA.jpg" itemprop="image" />
+    </a>
+    
+    <a class="gallery-item" href="http://i.imgur.com/n9luJJI.jpg" rel="gallery_cjg97hm4r003ein2jfacjn4k1">
+        <img src="http://i.imgur.com/n9luJJI.jpg" itemprop="image" />
+    </a>
+    
+</div>
+
+
+  <div class="content" itemprop="articleBody">
+    <p>A polyu Beamer template</p>
+<a id="more"></a>
+<h2 id="GitHub-Repo"><a href="#GitHub-Repo" class="headerlink" title="GitHub Repo"></a>GitHub Repo</h2><p><a href="https://github.com/quxiaofeng/PolyU_thesis_template" target="_blank" rel="noopener">https://github.com/quxiaofeng/PolyU_thesis_template</a></p>
+<h2 id="About-This-Theme"><a href="#About-This-Theme" class="headerlink" title="About This Theme"></a>About This Theme</h2><p>This a beamer theme created for The Hong Kong Polytechnic University.</p>
+<h2 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h2><ol>
+<li>Need Beamer (of course)</li>
+<li>Need picins package in</li>
+</ol>
+<pre><code>\texmf-local\tex\latex\local\
+</code></pre><h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><pre><code>\usepackage[
+    compress,
+    %minimal,
+    %nonav,
+    red,
+    %gold,
+    %blue,
+    numbers,
+    %nologo,
+    polyu,
+    %comp,
+    %forty,
+    %seventyfive,
+]
+{beamerthemeHongKong}
+</code></pre><ul>
+<li>“compress” option is recommended. It provides a short header and information about slides structure.</li>
+<li>“minimal” option provides a simplest framework.</li>
+<li>“nonav” can suppress the navigating buttons on lower right-hand corner.</li>
+<li>“red” option is the default and the only implemented color option.</li>
+<li>“gold” option is not ready. It is inspired by the 75th anniversary ceremony. The link to the guidelines are found but dead. I am trying to get the access.</li>
+<li>“blue” option is ready. It is inspired by the Computing Department 45th anniversary logo.</li>
+<li>“numbers” option is the page number on the bottom left-hand corner.</li>
+<li>“nologo” option enables the solo usage of color theme without PolyU logos on title page and headers.</li>
+<li>“polyu” option is default option and it enables whether it exist or not.</li>
+<li>“comp” option is to include the computing logo in the title page and the head banner.</li>
+<li>“forty” option is to use the Computing Department 40th anniversary logo in the title page and the head banner.</li>
+<li>“seventyfive” option is to use the PolyU 75th anniversary logo in the title page and the head banner.</li>
+</ul>
+<h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><ul>
+<li>CTeX suite was the design target, and CJK is used for the Chinese support.</li>
+<li>Now it will change to be compiled with texlive 2012 or above.</li>
+</ul>
+<h2 id="About-the-design"><a href="#About-the-design" class="headerlink" title="About the design"></a>About the design</h2><h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><p>The layout of this theme is based on the work done by <a href="http://cassens.org/" target="_blank" rel="noopener">Jorg Cassens</a> and <a href="http://www.tcs.uni-luebeck.de/mitarbeiter/tantau/" target="_blank" rel="noopener">Till Tantau</a> as shown in themes/theme/beamerthemeHongKong.sty.</p>
+<p>This PolyU theme is a modification of the <a href="http://story.idi.ntnu.no/~cassens/blog/archives/39-A-Beamer-theme-for-NTNU.html" target="_blank" rel="noopener">NTNU Beamer theme</a>. The general layout is same. The only differences are the color set and logos.</p>
+<p>The aim of this modification is to create a nice and tidy PolyU theme using NTNU or the shadow style.</p>
+<h3 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h3><ul>
+<li>The majority of colors are various kinds of deep and light brick red.</li>
+<li>The RGB values are extracted from PolyU official website before. Though I asked computing office for these files, I got nothing.</li>
+<li>Now PolyU VI standard is found, but only a little is added into this theme. More needs to be done.<ol>
+<li>Update color values according to the <a href="http://www.polyu.edu.hk/cpa/polyu/index.php?option=com_content&amp;view=article&amp;id=156&amp;Itemid=48" target="_blank" rel="noopener">PolyU VI</a>.</li>
+<li>Check PolyU standard PPT template. Though the whole design will maintain, defects and false usage of polyu elements should be fixed.</li>
+</ol>
+</li>
+</ul>
+<figure><br>  <img src="http://i.imgur.com/j1Nl1FR.png"><br>  <figcaption><br>  The traditional PolyU theme with the red color and the polyu logo<br>  </figcaption><br></figure>
+
+
+
+<h2 id="COMP-40-Anniversary-Theme-comp-and-forty"><a href="#COMP-40-Anniversary-Theme-comp-and-forty" class="headerlink" title="COMP 40 Anniversary Theme comp and forty"></a>COMP 40 Anniversary Theme <code>comp</code> and <code>forty</code></h2><p>The new banners and logos</p>
+<figure><br>  <img src="http://i.imgur.com/RwKwlNG.jpg"><br>  <figcaption><br>  New cmputing logo<br>  </figcaption><br></figure>
+
+<figure><br>  <img src="http://i.imgur.com/NlTejiH.jpg"><br>  <figcaption><br>  Computing 40th anniversary logo<br>  </figcaption><br></figure>
+
+<p>And new color called <code>blue</code></p>
+<ul>
+<li>polyublue <code>(0, 140, 215) #008C7D</code>.</li>
+<li>polyugreen <code>(143, 195,32) #8FC320</code>.</li>
+<li>polyuicyblue<code>(83, 195,241) #53C3F1</code>.</li>
+</ul>
+<h4 id="comp-and-blue"><a href="#comp-and-blue" class="headerlink" title="comp and blue"></a><code>comp</code> and <code>blue</code></h4><figure><br>  <img src="http://i.imgur.com/4OGjxSA.jpg"><br>  <figcaption><br>  An example with comp logo and blue color<br>  </figcaption><br></figure>
+
+<h4 id="forty-and-blue"><a href="#forty-and-blue" class="headerlink" title="forty and blue"></a><code>forty</code> and <code>blue</code></h4><figure><br>  <img src="http://i.imgur.com/f4fARax.jpg"><br>  <figcaption><br>  An example with the forty logo and the blue color<br>  </figcaption><br></figure>
+
+<h4 id="polyu-forty-and-blue"><a href="#polyu-forty-and-blue" class="headerlink" title="polyu, forty and blue"></a><code>polyu</code>, <code>forty</code> and <code>blue</code></h4><figure><br>  <img src="http://i.imgur.com/AqpXt7C.jpg"><br>  <figcaption><br>  An example with both the forty and the polyu logos and the blue color<br>  </figcaption><br></figure>
+
+<h4 id="polyu-comp-and-red"><a href="#polyu-comp-and-red" class="headerlink" title="polyu, comp and red"></a><code>polyu</code>, <code>comp</code> and <code>red</code></h4><figure><br>  <img src="http://i.imgur.com/aPY8hKY.jpg"><br>  <figcaption><br>  An example with both the comp and the polyu logos and the red color<br>  </figcaption><br></figure>
+
+<p><strong>Actually, there are may different combinations. Just have fun.</strong></p>
+<h2 id="PolyU-75-Anniversary-Theme-seventyfive-and-gold"><a href="#PolyU-75-Anniversary-Theme-seventyfive-and-gold" class="headerlink" title="PolyU 75 Anniversary Theme seventyfive and gold"></a>PolyU 75 Anniversary Theme <code>seventyfive</code> and <code>gold</code></h2><figure><br>  <img src="http://i.imgur.com/0zqAyWG.png"><br>  <figcaption><br>  The PolyU 75th anniversary logo<br>  </figcaption><br></figure>
+
+<figure><br>  <img src="http://i.imgur.com/n9luJJI.jpg"><br>  <figcaption><br>  An example with both the seventyfive logos and the gold color<br>  </figcaption><br></figure>
+
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ol>
+<li><del>Update with PolyU VI</del>.</li>
+<li><del>Add a gold setting following <a href="http://75.polyu.hk/" target="_blank" rel="noopener">PolyU’s 75th Anniversary</a> color style. found the guidelines link <a href="https://www2.polyu.edu.hk/Script/staff/cpa/Staff/75th_Guidelines/" target="_blank" rel="noopener">https://www2.polyu.edu.hk/Script/staff/cpa/Staff/75th_Guidelines/</a> in this page <a href="http://www.polyu.edu.hk/cpa/75thanniversary/index.php?route=gallery/seventyfivethanniversaryidentity" target="_blank" rel="noopener">http://www.polyu.edu.hk/cpa/75thanniversary/index.php?route=gallery/seventyfivethanniversaryidentity</a>. Have to contact <a href="http://www.polyu.edu.hk/~its/aboutits/aboutits_04.html" target="_blank" rel="noopener">ITS</a>. If this attempt failed, the logo was designed by Mr Freeman Lau Siu-hong. Try to <a href="http://www.freemanlau.com/en/index.html" target="_blank" rel="noopener">contact him</a>.</del></li>
+<li>Fine tuning of the color and other config.</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GitHub-Repo"><span class="toc-number">1.</span> <span class="toc-text">GitHub Repo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-This-Theme"><span class="toc-number">2.</span> <span class="toc-text">About This Theme</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-number">3.</span> <span class="toc-text">Dependencies</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Settings"><span class="toc-number">3.1.</span> <span class="toc-text">Settings</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template"><span class="toc-number">4.</span> <span class="toc-text">Template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#About-the-design"><span class="toc-number">5.</span> <span class="toc-text">About the design</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Layout"><span class="toc-number">5.1.</span> <span class="toc-text">Layout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Color"><span class="toc-number">5.2.</span> <span class="toc-text">Color</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COMP-40-Anniversary-Theme-comp-and-forty"><span class="toc-number">6.</span> <span class="toc-text">COMP 40 Anniversary Theme comp and forty</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#comp-and-blue"><span class="toc-number">6.0.1.</span> <span class="toc-text">comp and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#forty-and-blue"><span class="toc-number">6.0.2.</span> <span class="toc-text">forty and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polyu-forty-and-blue"><span class="toc-number">6.0.3.</span> <span class="toc-text">polyu, forty and blue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polyu-comp-and-red"><span class="toc-number">6.0.4.</span> <span class="toc-text">polyu, comp and red</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PolyU-75-Anniversary-Theme-seventyfive-and-gold"><span class="toc-number">7.</span> <span class="toc-text">PolyU 75 Anniversary Theme seventyfive and gold</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO"><span class="toc-number">8.</span> <span class="toc-text">TODO</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&text=PolyU Beamer Theme"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&is_video=false&description=PolyU Beamer Theme"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PolyU Beamer Theme&body=Check out this article: http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&title=PolyU Beamer Theme"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/22/polyu-beamer-theme/&name=PolyU Beamer Theme&description=&lt;p&gt;A polyu Beamer template&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

@@ -1,1 +1,335 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="A SWIG example interfacing a windows dll to python.">
+<meta name="keywords" content="coding,python,c++,c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A SWIG Example">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/03/01/swig-example/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="A SWIG example interfacing a windows dll to python.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://i.imgur.com/rPhlR7E.png">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A SWIG Example">
+<meta name="twitter:description" content="A SWIG example interfacing a windows dll to python.">
+<meta name="twitter:image" content="http://i.imgur.com/rPhlR7E.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>A SWIG Example</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2014/03/01/matlab-coding-style/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/02/28/ctypes-example/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/01/swig-example/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&text=A SWIG Example"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&is_video=false&description=A SWIG Example"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A SWIG Example&body=Check out this article: http://www.quxiaofeng.me/2014/03/01/swig-example/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&name=A SWIG Example&description=&lt;h2 id=&#34;SWIG&#34;&gt;&lt;a href=&#34;#SWIG&#34; class=&#34;headerlink&#34; title=&#34;SWIG&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://www.swig.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWIG&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SWIG is stand along software development tool. It connects code programmed in C and C++ with many high-level programming languages including python. SWIG is used to parse C/C++ interfaces and generate the ‘glue code’ required for the above target languages to call into the C/C++ code. &lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SWIG"><span class="toc-number">1.</span> <span class="toc-text">SWIG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Basic-But-Not-Simple-Example"><span class="toc-number">2.</span> <span class="toc-text">A Basic But Not Simple Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Make-a-little-DLL-project"><span class="toc-number">2.1.</span> <span class="toc-text">1. Make a little DLL project.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Make-a-Python-dynamic-module"><span class="toc-number">2.2.</span> <span class="toc-text">2. Make a Python dynamic module</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Compile-the-xiaoAddModule-i-for-xiaoAddModule-wrap-cxx"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. Compile the xiaoAddModule.i for xiaoAddModule_wrap.cxx.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Build-the-project-Reference-including"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. Build the project (Reference) including</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Get-the-results"><span class="toc-number">2.2.3.</span> <span class="toc-text">3. Get the results</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Write-the-Python-script-within-the-folder-where-above-results-are-located"><span class="toc-number">2.2.4.</span> <span class="toc-text">4. Write the Python script within the folder where above results are located.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Complex-Solution-For-A-Complex-Example"><span class="toc-number">3.</span> <span class="toc-text">A Complex Solution For A Complex Example</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        A SWIG Example
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2014-03-01T09:58:51.000Z" itemprop="datePublished">March 01, 2014</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/c/">c</a>, <a class="tag-link" href="/tags/c/">c++</a>, <a class="tag-link" href="/tags/coding/">coding</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+<div class="article-gallery">
+    
+    <a class="gallery-item" href="http://i.imgur.com/rPhlR7E.png" rel="gallery_cjg97hm4e0033in2j3hw76tnp">
+        <img src="http://i.imgur.com/rPhlR7E.png" itemprop="image" />
+    </a>
+    
+</div>
+
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="SWIG"><a href="#SWIG" class="headerlink" title="SWIG"></a><a href="http://www.swig.org" target="_blank" rel="noopener">SWIG</a></h2><p>SWIG is stand along software development tool. It connects code programmed in C and C++ with many high-level programming languages including python. SWIG is used to parse C/C++ interfaces and generate the ‘glue code’ required for the above target languages to call into the C/C++ code. </p>
+<a id="more"></a>
+<p>The idea of SWIG is to create a dynamic python library module, which calls the SDK DLL. The structure is shown below.</p>
+<figure><br>  <img src="http://i.imgur.com/rPhlR7E.png"><br>  <figcaption><br>  SWIG interfacing principle<br>  </figcaption><br></figure>
+
+<p>The SWIG compiles the DLL and H files under the instruction of the .i file (SWIG configuring file). The SWIG project generates the Python Dynamic Library file (pyd). This pyd file can be imported to python.</p>
+<h2 id="A-Basic-But-Not-Simple-Example"><a href="#A-Basic-But-Not-Simple-Example" class="headerlink" title="A Basic But Not Simple Example"></a>A Basic But Not Simple Example</h2><ul>
+<li><a href="https://github.com/quxiaofeng/swig-cpp-class-dll-wrapping-test" target="_blank" rel="noopener">github repo</a></li>
+</ul>
+<h3 id="1-Make-a-little-DLL-project"><a href="#1-Make-a-little-DLL-project" class="headerlink" title="1. Make a little DLL project."></a>1. Make a little DLL project.</h3><p>In the repo, this little DLL project is <strong>xiaoAdd</strong>. There is a <strong>class AddTest</strong>. This class has only one useful <strong>member function add</strong>.</p>
+<p><code>AddTest.h</code></p>
+<pre><code>/* AddTest.h */
+#pragma once
+
+class __declspec(dllexport) AddTest
+{
+public:
+    AddTest(void);
+    ~AddTest(void);
+    int add(int a, int b);
+};
+</code></pre><p><code>AddTest.cpp</code></p>
+<pre><code>/* AddTest.cpp */
+#include &quot;AddTest.h&quot;
+
+AddTest::AddTest(void)
+{
+}
+
+AddTest::~AddTest(void)
+{
+}
+
+int AddTest::add(int a, int b)
+{
+    return a+b;
+}
+</code></pre><p>Compile this project and get the results.</p>
+<pre><code>xiaoAdd.dll
+xiaoAdd.lib
+xiaoAdd.pdb
+</code></pre><h3 id="2-Make-a-Python-dynamic-module"><a href="#2-Make-a-Python-dynamic-module" class="headerlink" title="2. Make a Python dynamic module"></a>2. Make a Python dynamic module</h3><p>In the github repo, this module is xiaoA</p>
+<p><em>AddTest.h</em></p>
+<pre><code>/* AddTest.h */
+#pragma once
+
+class __declspec(dllimport)AddTest
+{
+public:
+    AddTest(void);
+    ~AddTest(void);
+    int add(int a, int b);
+};
+</code></pre><p><em>xiaoAddModule.i</em></p>
+<pre><code>/* xiaoAddModule.i */
+%module xiaoAddModule
+
+%{
+/* Put header files here or function declarations like below */
+#include &quot;AddTest.h&quot;
+%}
+
+%include &lt;windows.i&gt;
+%include &quot;AddTest.h&quot;
+</code></pre><h4 id="1-Compile-the-xiaoAddModule-i-for-xiaoAddModule-wrap-cxx"><a href="#1-Compile-the-xiaoAddModule-i-for-xiaoAddModule-wrap-cxx" class="headerlink" title="1. Compile the xiaoAddModule.i for xiaoAddModule_wrap.cxx."></a>1. Compile the xiaoAddModule.i for xiaoAddModule_wrap.cxx.</h4><h4 id="2-Build-the-project-Reference-including"><a href="#2-Build-the-project-Reference-including" class="headerlink" title="2. Build the project (Reference) including"></a>2. Build the project (<a href="http://stackoverflow.com/questions/11693047/how-to-create-a-dll-with-swig-from-visual-studio-2010" target="_blank" rel="noopener">Reference</a>) including</h4><pre><code>xiaoAddModule_wrap.cxx
+AddTest.h
+xiaoAdd.dll
+xiaoAdd.lib
+</code></pre><h4 id="3-Get-the-results"><a href="#3-Get-the-results" class="headerlink" title="3. Get the results"></a>3. Get the results</h4><pre><code>_xiaoAddModule.exp
+_xiaoAddModule.lib
+_xiaoAddModule.pdb
+_xiaoAddModule.pyd
+xiaoAddModule.py
+xiaoAddmodule.pyc
+</code></pre><h4 id="4-Write-the-Python-script-within-the-folder-where-above-results-are-located"><a href="#4-Write-the-Python-script-within-the-folder-where-above-results-are-located" class="headerlink" title="4. Write the Python script within the folder where above results are located."></a>4. Write the Python script within the folder where above results are located.</h4><p><code>test.py</code></p>
+<pre><code># test.py
+import xiaoAddModule
+instance = xiaoAddModule.AddTest()
+print &apos;The result of 2 + 3 = %r&apos; % (instance.add(2,3))
+wait = input(&quot;PRESS ENTER TO EXIT.&quot;)
+</code></pre><h2 id="A-Complex-Solution-For-A-Complex-Example"><a href="#A-Complex-Solution-For-A-Complex-Example" class="headerlink" title="A Complex Solution For A Complex Example"></a>A Complex Solution For A Complex Example</h2><p>When wrapping a complex 3rd party library, there are lots of classes and functions. We want to keep this interface nice and clean. A C++ wrapper is implemented as shown below.</p>
+<figure><br>  <img src="http://i.imgur.com/lHar1Ig.png"><br>  <figcaption><br>  Double layer wrapping<br>  </figcaption><br></figure>
+
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SWIG"><span class="toc-number">1.</span> <span class="toc-text">SWIG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Basic-But-Not-Simple-Example"><span class="toc-number">2.</span> <span class="toc-text">A Basic But Not Simple Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Make-a-little-DLL-project"><span class="toc-number">2.1.</span> <span class="toc-text">1. Make a little DLL project.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Make-a-Python-dynamic-module"><span class="toc-number">2.2.</span> <span class="toc-text">2. Make a Python dynamic module</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Compile-the-xiaoAddModule-i-for-xiaoAddModule-wrap-cxx"><span class="toc-number">2.2.1.</span> <span class="toc-text">1. Compile the xiaoAddModule.i for xiaoAddModule_wrap.cxx.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Build-the-project-Reference-including"><span class="toc-number">2.2.2.</span> <span class="toc-text">2. Build the project (Reference) including</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Get-the-results"><span class="toc-number">2.2.3.</span> <span class="toc-text">3. Get the results</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Write-the-Python-script-within-the-folder-where-above-results-are-located"><span class="toc-number">2.2.4.</span> <span class="toc-text">4. Write the Python script within the folder where above results are located.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-Complex-Solution-For-A-Complex-Example"><span class="toc-number">3.</span> <span class="toc-text">A Complex Solution For A Complex Example</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/01/swig-example/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&text=A SWIG Example"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&is_video=false&description=A SWIG Example"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A SWIG Example&body=Check out this article: http://www.quxiaofeng.me/2014/03/01/swig-example/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&title=A SWIG Example"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/01/swig-example/&name=A SWIG Example&description=&lt;h2 id=&#34;SWIG&#34;&gt;&lt;a href=&#34;#SWIG&#34; class=&#34;headerlink&#34; title=&#34;SWIG&#34;&gt;&lt;/a&gt;&lt;a href=&#34;http://www.swig.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SWIG&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SWIG is stand along software development tool. It connects code programmed in C and C++ with many high-level programming languages including python. SWIG is used to parse C/C++ interfaces and generate the ‘glue code’ required for the above target languages to call into the C/C++ code. &lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

@@ -1,1 +1,285 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="初衷用 matlab 实现可恢复的批量实验 由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。  在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。 完成一个实验之后，自动进行下一个实验。 如果一个实验由于意外">
+<meta name="keywords" content="research,matlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Resumable Experiment">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/03/12/resumable-experiment/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="初衷用 matlab 实现可恢复的批量实验 由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。  在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。 完成一个实验之后，自动进行下一个实验。 如果一个实验由于意外">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Resumable Experiment">
+<meta name="twitter:description" content="初衷用 matlab 实现可恢复的批量实验 由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。  在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。 完成一个实验之后，自动进行下一个实验。 如果一个实验由于意外">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>Resumable Experiment</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2014/03/13/matlab-debug-state/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/03/06/zentangle/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&text=Resumable Experiment"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&is_video=false&description=Resumable Experiment"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Resumable Experiment&body=Check out this article: http://www.quxiaofeng.me/2014/03/12/resumable-experiment/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&name=Resumable Experiment&description=&lt;h2 id=&#34;初衷&#34;&gt;&lt;a href=&#34;#初衷&#34; class=&#34;headerlink&#34; title=&#34;初衷&#34;&gt;&lt;/a&gt;初衷&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;用 matlab 实现可恢复的批量实验&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。&lt;/li&gt;
+&lt;li&gt;完成一个实验之后，自动进行下一个实验。&lt;/li&gt;
+&lt;li&gt;如果一个实验由于意外、或者人工中断，没有完成，再次打开 matlab 进行实验时，可以接着上次的实验继续进行。&lt;/li&gt;
+&lt;li&gt;如果实验出现意外，出错了，可以记录出错，不退出，自动进行下一个实验。&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初衷"><span class="toc-number">1.</span> <span class="toc-text">初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进展"><span class="toc-number">2.</span> <span class="toc-text">进展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本想法"><span class="toc-number">2.1.</span> <span class="toc-text">基本想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#意外"><span class="toc-number">2.2.</span> <span class="toc-text">意外</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO-要进行的工作"><span class="toc-number">3.</span> <span class="toc-text">TODO - 要进行的工作</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Resumable Experiment
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2014-03-12T08:38:49.000Z" itemprop="datePublished">March 12, 2014</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/matlab/">matlab</a>, <a class="tag-link" href="/tags/research/">research</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p><strong>用 matlab 实现可恢复的批量实验</strong></p>
+<p>由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。</p>
+<ol>
+<li>在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。</li>
+<li>完成一个实验之后，自动进行下一个实验。</li>
+<li>如果一个实验由于意外、或者人工中断，没有完成，再次打开 matlab 进行实验时，可以接着上次的实验继续进行。</li>
+<li>如果实验出现意外，出错了，可以记录出错，不退出，自动进行下一个实验。</li>
+</ol>
+<a id="more"></a>
+<hr>
+<h2 id="进展"><a href="#进展" class="headerlink" title="进展"></a>进展</h2><p>详见代码在 GitHub 上的 repo。</p>
+<p><a href="https://github.com/quxiaofeng/balance/tree/master/ResumableExperiment" target="_blank" rel="noopener">balance/ResumableExperiment at master · quxiaofeng/balance · GitHub</a></p>
+<h3 id="基本想法"><a href="#基本想法" class="headerlink" title="基本想法"></a>基本想法</h3><p>基本想法是，先把参数排列组合成参数组的集合，把进度保留在一个mat文件里面。每次开始批量之前检查是否有当前批量的进度记录，如果有记录，载入进度记录继，使用当前进度的参数组进行一次实验，记录结果并继续；如果没有记录，创建进度记录文件，记录进度，进行实验。</p>
+<h3 id="意外"><a href="#意外" class="headerlink" title="意外"></a>意外</h3><p>在自己造轮子的时候，我记得有一次半夜在网上看到类似功能的代码/函数/工具箱，可以直接保存实验运行时状态，稍后再载入的。当时没有保存下来，隔天清醒之后就忘了。</p>
+<p>暂时找不到了，再投入精力去也没有什么意义，不如继续已有的工作。</p>
+<h2 id="TODO-要进行的工作"><a href="#TODO-要进行的工作" class="headerlink" title="TODO - 要进行的工作"></a>TODO - 要进行的工作</h2><ol>
+<li><del>修改重订函数名。修改程度较大，不考虑前向兼容。</del></li>
+<li>编写unittest</li>
+<li><del>传递环境变量到每个参数集中。</del></li>
+<li><del>保存每一次实验的结果到 excel</del>。</li>
+<li><del>当参数小于等于两个时，保存到一个excel。</del></li>
+<li><del>当参数大于两个时，其他参数及其取值以excel文件名的形式保存。</del></li>
+<li><del>整理所有函数到一个函数，保存到一个文件中。</del></li>
+<li><del>写一个example。</del></li>
+<li>将参数组合的解析用函数指针实现。现在为了使用resumable，还需要修改原始函数，接收参数组合之后解析各个参数。</li>
+<li>拆分 resumable 和 excel saving 代码。现有的 resumable 是跟 excel 结果保存程序结合的。</li>
+<li><del><strong>BUG</strong> 当程序被中断，并退出matlab，然后再次打开matlab，应用程序的时候，前些次实验的结果没能保留下来。（只要不退出 matlab，结果还存在。）<strong>分析</strong> 主要原因是结果作为全局函数，每次保存结果时，都会保存到当前实验目录下。但如果退出matlab，以前的实验结果就不见了。<strong>解决方案</strong> 当前比较简单的方法是把结果数据跟进度progress一起保存。</del></li>
+<li><del>环境变量现在是用手动增加的方法保存，可以保存为一个结构或用一个函数指针，这样可以支持多一些变量。</del></li>
+</ol>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#初衷"><span class="toc-number">1.</span> <span class="toc-text">初衷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进展"><span class="toc-number">2.</span> <span class="toc-text">进展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本想法"><span class="toc-number">2.1.</span> <span class="toc-text">基本想法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#意外"><span class="toc-number">2.2.</span> <span class="toc-text">意外</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TODO-要进行的工作"><span class="toc-number">3.</span> <span class="toc-text">TODO - 要进行的工作</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&text=Resumable Experiment"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&is_video=false&description=Resumable Experiment"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Resumable Experiment&body=Check out this article: http://www.quxiaofeng.me/2014/03/12/resumable-experiment/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&title=Resumable Experiment"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/03/12/resumable-experiment/&name=Resumable Experiment&description=&lt;h2 id=&#34;初衷&#34;&gt;&lt;a href=&#34;#初衷&#34; class=&#34;headerlink&#34; title=&#34;初衷&#34;&gt;&lt;/a&gt;初衷&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;用 matlab 实现可恢复的批量实验&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于学术研究（攒paper）需要，经常需要针对许多参数进行枚举优化。尤其在一些比较大的数据集上，做多个参数的枚举扫描优化的时候，运行速度慢，实验进行时间长。所以想设计一种这样的批量进行实验的程序。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在批量进行参数扫描时，为每一次单独实验生成一组参数，调用这组参数进行实验，记录参数和实验结果。&lt;/li&gt;
+&lt;li&gt;完成一个实验之后，自动进行下一个实验。&lt;/li&gt;
+&lt;li&gt;如果一个实验由于意外、或者人工中断，没有完成，再次打开 matlab 进行实验时，可以接着上次的实验继续进行。&lt;/li&gt;
+&lt;li&gt;如果实验出现意外，出错了，可以记录出错，不退出，自动进行下一个实验。&lt;/li&gt;
+&lt;/ol&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

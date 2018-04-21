@@ -1,1 +1,299 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Online Resources for metric learning.">
+<meta name="keywords" content="algorithm,matlab,svm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Metric Learning">
+<meta property="og:url" content="http://www.quxiaofeng.me/2014/02/26/metric-learning/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="Online Resources for metric learning.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/9087/original.jpg">
+<meta property="og:image" content="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/7678/original.jpg">
+<meta property="og:image" content="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/6858/original.jpg">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Metric Learning">
+<meta name="twitter:description" content="Online Resources for metric learning.">
+<meta name="twitter:image" content="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/9087/original.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>Metric Learning</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2014/02/27/canopy-welcome-issue/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2014/02/25/python-pygame-notes/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/02/26/metric-learning/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&text=Metric Learning"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&is_video=false&description=Metric Learning"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Metric Learning&body=Check out this article: http://www.quxiaofeng.me/2014/02/26/metric-learning/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&name=Metric Learning&description=&lt;p&gt;Online Resources for metric learning.&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Professor-Dacheng-Tao"><span class="toc-number">1.</span> <span class="toc-text">Professor Dacheng Tao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Research-Code"><span class="toc-number">2.</span> <span class="toc-text">Research Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DistLearnKit"><span class="toc-number">2.1.</span> <span class="toc-text">DistLearnKit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reproducible-Research-in-Computational-Science"><span class="toc-number">2.2.</span> <span class="toc-text">Reproducible Research in Computational Science</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Semi-Supervised-Learning-Software"><span class="toc-number">2.3.</span> <span class="toc-text">Semi-Supervised Learning Software</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#南京大学-机器学习与数据挖掘研究所"><span class="toc-number">2.4.</span> <span class="toc-text">南京大学 - 机器学习与数据挖掘研究所</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sparse-metric-learning-and-others"><span class="toc-number">2.5.</span> <span class="toc-text">Sparse metric learning and others</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MATLAB-and-Octave-Functions"><span class="toc-number">2.6.</span> <span class="toc-text">[MATLAB and Octave Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unconstrained-Optimization-of-Differentiable-Real-valued-Multivariate-Functions"><span class="toc-number">2.7.</span> <span class="toc-text">Unconstrained Optimization of Differentiable Real-valued Multivariate Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LFW-Results"><span class="toc-number">2.8.</span> <span class="toc-text">LFW : Results</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matlab-Toolbox"><span class="toc-number">3.</span> <span class="toc-text">Matlab Toolbox</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Machine-Learning-with-MATLAB"><span class="toc-number">3.1.</span> <span class="toc-text">Machine Learning with MATLAB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deep-Learning-Toolbox"><span class="toc-number">3.2.</span> <span class="toc-text">Deep Learning Toolbox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-Class-Support-Vector-Machine"><span class="toc-number">3.3.</span> <span class="toc-text">Multi Class Support Vector Machine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Computing-Pairwise-Distances-and-Metrics"><span class="toc-number">3.4.</span> <span class="toc-text">Computing Pairwise Distances and Metrics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Online-Video"><span class="toc-number">4.</span> <span class="toc-text">Online Video</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Distance-Metric-Learning-for-Kernel-Machines"><span class="toc-number">4.1.</span> <span class="toc-text">Distance Metric Learning for Kernel Machines</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Metric Learning
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2014-02-26T00:47:23.000Z" itemprop="datePublished">February 26, 2014</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/matlab/">matlab</a>, <a class="tag-link" href="/tags/svm/">svm</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Online Resources for metric learning.</p>
+<a id="more"></a>
+<ul>
+<li><p><a href="http://deeplearning.net/" target="_blank" rel="noopener">Deep Learning</a></p>
+</li>
+<li><p><a href="http://www.cs.berkeley.edu/~bartlett/courses/281b-sp08/readings.html" target="_blank" rel="noopener">Statistical Learning Theory Readings</a></p>
+</li>
+<li><p><a href="http://sfb649.wiwi.hu-berlin.de/fedc_homepage/xplore/tutorials/" target="_blank" rel="noopener">Statistical Tools for Finance and Insurance</a></p>
+</li>
+<li><p><a href="http://users.csc.calpoly.edu/~dekhtyar/560-Fall2009/" target="_blank" rel="noopener">CSC 560: Web Mining</a></p>
+</li>
+<li><p><a href="http://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/" target="_blank" rel="noopener">Linear Algebra | Mathematics | MIT OpenCourseWare</a></p>
+</li>
+<li><p><a href="http://ordination.okstate.edu/distsim.htm" target="_blank" rel="noopener">Similarity, Difference and Distance</a></p>
+</li>
+<li><p><a href="http://scikit-learn.org/dev/modules/metrics.html" target="_blank" rel="noopener">4.5. Pairwise metrics, Affinities and Kernels — scikit-learn 0.15-git documentation</a></p>
+</li>
+<li><p><a href="http://videolectures.net/course_information_theory_pattern_recognition/" target="_blank" rel="noopener">Course on Information Theory, Pattern Recognition, and Neural Networks - VideoLectures - VideoLectures.NET</a></p>
+</li>
+</ul>
+<h2 id="Professor-Dacheng-Tao"><a href="#Professor-Dacheng-Tao" class="headerlink" title="Professor Dacheng Tao"></a><a href="http://cfsites1.uts.edu.au/qcis/members/detail.cfm?StaffID=11731#" target="_blank" rel="noopener">Professor Dacheng Tao</a></h2><ul>
+<li><p><a href="http://arxiv.org/abs/1207.3438" target="_blank" rel="noopener">MahNMF: Manhattan Non-negative Matrix Factorization</a></p>
+</li>
+<li><p><a href="http://arxiv.org/abs/1110.0073" target="_blank" rel="noopener">Hamming Compressed Sensing Paper</a> and <a href="https://sites.google.com/site/hammingcs/home" target="_blank" rel="noopener">Site</a></p>
+</li>
+<li><p><a href="https://sites.google.com/site/godecomposition/home" target="_blank" rel="noopener">Go Decomposition (GoDec): Randomized Low-rank and Sparse Matrix Decomposition in Noisy Case;<br>Fast Algorithm for Visual Analysis, Matrix Completion and Multi-label Learning</a></p>
+</li>
+</ul>
+<h2 id="Research-Code"><a href="#Research-Code" class="headerlink" title="Research Code"></a>Research Code</h2><h3 id="DistLearnKit"><a href="#DistLearnKit" class="headerlink" title="DistLearnKit"></a><a href="http://www.cs.cmu.edu/~liuy/distlearn.htm" target="_blank" rel="noopener">DistLearnKit</a></h3><p>by <a href="http://www.cs.cmu.edu/~liuy/" target="_blank" rel="noopener">Liu Yang</a> and <a href="http://www.cse.msu.edu/~rongjin/" target="_blank" rel="noopener">Prof. Rong Jin</a></p>
+<p>A Matlab Toolkit for Distance Metric Learning</p>
+<h3 id="Reproducible-Research-in-Computational-Science"><a href="#Reproducible-Research-in-Computational-Science" class="headerlink" title="Reproducible Research in Computational Science"></a><a href="http://www.csee.wvu.edu/~xinl/source.html" target="_blank" rel="noopener">Reproducible Research in Computational Science</a></h3><p>by <a href="http://www.csee.wvu.edu/~xinl/" target="_blank" rel="noopener">Xin Li</a></p>
+<h3 id="Semi-Supervised-Learning-Software"><a href="#Semi-Supervised-Learning-Software" class="headerlink" title="Semi-Supervised Learning Software"></a><a href="http://pages.cs.wisc.edu/~jerryzhu/ssl/software.html" target="_blank" rel="noopener">Semi-Supervised Learning Software</a></h3><p>by Jake Yang and Xiaojin Zhu</p>
+<h3 id="南京大学-机器学习与数据挖掘研究所"><a href="#南京大学-机器学习与数据挖掘研究所" class="headerlink" title="南京大学 - 机器学习与数据挖掘研究所"></a><a href="http://lamda.nju.edu.cn/Data.ashx" target="_blank" rel="noopener">南京大学 - 机器学习与数据挖掘研究所</a></h3><h3 id="Sparse-metric-learning-and-others"><a href="#Sparse-metric-learning-and-others" class="headerlink" title="Sparse metric learning and others"></a><a href="http://empslocal.ex.ac.uk/people/staff/yy267/software.html" target="_blank" rel="noopener">Sparse metric learning and others</a></h3><p>by <a href="http://empslocal.ex.ac.uk/people/staff/yy267/" target="_blank" rel="noopener">Yiming Ying</a></p>
+<h3 id="MATLAB-and-Octave-Functions"><a href="#MATLAB-and-Octave-Functions" class="headerlink" title="[MATLAB and Octave Functions"></a>[MATLAB and Octave Functions</h3><p>for Computer Vision and Image Processing](<a href="http://www.csse.uwa.edu.au/~pk/research/matlabfns/" target="_blank" rel="noopener">http://www.csse.uwa.edu.au/~pk/research/matlabfns/</a>) ###<br>by <a href="http://www.csse.uwa.edu.au/~pk/research/matlabfns/" target="_blank" rel="noopener">Peter Kovesi</a></p>
+<h3 id="Unconstrained-Optimization-of-Differentiable-Real-valued-Multivariate-Functions"><a href="#Unconstrained-Optimization-of-Differentiable-Real-valued-Multivariate-Functions" class="headerlink" title="Unconstrained Optimization of Differentiable Real-valued Multivariate Functions"></a><a href="http://www.di.ens.fr/~mschmidt/Software/code.html" target="_blank" rel="noopener">Unconstrained Optimization of Differentiable Real-valued Multivariate Functions</a></h3><p>by Mark Schmidt</p>
+<h3 id="LFW-Results"><a href="#LFW-Results" class="headerlink" title="LFW : Results"></a><a href="http://vis-www.cs.umass.edu/lfw/results.html" target="_blank" rel="noopener">LFW : Results</a></h3><h2 id="Matlab-Toolbox"><a href="#Matlab-Toolbox" class="headerlink" title="Matlab Toolbox"></a>Matlab Toolbox</h2><h3 id="Machine-Learning-with-MATLAB"><a href="#Machine-Learning-with-MATLAB" class="headerlink" title="Machine Learning with MATLAB"></a><a href="http://www.mathworks.com/matlabcentral/fileexchange/42744-machine-learning-with-matlab" target="_blank" rel="noopener">Machine Learning with MATLAB</a></h3><p>by Abhishek Gupta</p>
+<p><img src="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/9087/original.jpg" alt=""></p>
+<h3 id="Deep-Learning-Toolbox"><a href="#Deep-Learning-Toolbox" class="headerlink" title="Deep Learning Toolbox"></a><a href="http://www.mathworks.com/matlabcentral/fileexchange/38310-deep-learning-toolbox" target="_blank" rel="noopener">Deep Learning Toolbox</a></h3><p>by Rasmus Berg Palm</p>
+<p><img src="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/7678/original.jpg" alt=""></p>
+<h3 id="Multi-Class-Support-Vector-Machine"><a href="#Multi-Class-Support-Vector-Machine" class="headerlink" title="Multi Class Support Vector Machine"></a><a href="http://www.mathworks.com/matlabcentral/fileexchange/33170-multi-class-support-vector-machine" target="_blank" rel="noopener">Multi Class Support Vector Machine</a></h3><p>by Anand Mishra</p>
+<p><img src="http://www.mathworks.com/matlabcentral/fileexchange/screenshots/6858/original.jpg" alt=""></p>
+<h3 id="Computing-Pairwise-Distances-and-Metrics"><a href="#Computing-Pairwise-Distances-and-Metrics" class="headerlink" title="Computing Pairwise Distances and Metrics"></a><a href="http://www.mathworks.com/matlabcentral/fileexchange/15935-computing-pairwise-distances-and-metrics" target="_blank" rel="noopener">Computing Pairwise Distances and Metrics</a></h3><p>by Dahua Lin</p>
+<ul>
+<li><p><a href="http://www.shawnlankton.com/2008/04/active-contour-matlab-code-demo/" target="_blank" rel="noopener">Active Contours</a></p>
+</li>
+<li><p><a href="http://webdocs.cs.ualberta.ca/~nray1/MyWebsite/Codes.htm" target="_blank" rel="noopener">Nilanjan’s Image Analysis Software</a></p>
+</li>
+<li><p><a href="http://blog.csdn.net/zouxy09/article/details/8550952" target="_blank" rel="noopener">计算机视觉、机器学习相关领域论文和源代码大集合–持续更新…… - zouxy09的专栏 - 博客频道 - CSDN.NET</a></p>
+</li>
+<li><p><a href="http://www.mathworks.com/matlabcentral/fileexchange/15935-computing-pairwise-distances-and-metrics" target="_blank" rel="noopener">Computing Pairwise Distances and Metrics - File Exchange - MATLAB Central</a></p>
+</li>
+</ul>
+<h2 id="Online-Video"><a href="#Online-Video" class="headerlink" title="Online Video"></a>Online Video</h2><h3 id="Distance-Metric-Learning-for-Kernel-Machines"><a href="#Distance-Metric-Learning-for-Kernel-Machines" class="headerlink" title="Distance Metric Learning for Kernel Machines"></a><a href="http://videolectures.net/nipsworkshops2010_weinberger_dml/" target="_blank" rel="noopener">Distance Metric Learning for Kernel Machines</a></h3><p>by <a href="http://www.cse.wustl.edu/~kilian/" target="_blank" rel="noopener">Kilian Weinberger</a></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Professor-Dacheng-Tao"><span class="toc-number">1.</span> <span class="toc-text">Professor Dacheng Tao</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Research-Code"><span class="toc-number">2.</span> <span class="toc-text">Research Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DistLearnKit"><span class="toc-number">2.1.</span> <span class="toc-text">DistLearnKit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reproducible-Research-in-Computational-Science"><span class="toc-number">2.2.</span> <span class="toc-text">Reproducible Research in Computational Science</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Semi-Supervised-Learning-Software"><span class="toc-number">2.3.</span> <span class="toc-text">Semi-Supervised Learning Software</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#南京大学-机器学习与数据挖掘研究所"><span class="toc-number">2.4.</span> <span class="toc-text">南京大学 - 机器学习与数据挖掘研究所</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sparse-metric-learning-and-others"><span class="toc-number">2.5.</span> <span class="toc-text">Sparse metric learning and others</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MATLAB-and-Octave-Functions"><span class="toc-number">2.6.</span> <span class="toc-text">[MATLAB and Octave Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unconstrained-Optimization-of-Differentiable-Real-valued-Multivariate-Functions"><span class="toc-number">2.7.</span> <span class="toc-text">Unconstrained Optimization of Differentiable Real-valued Multivariate Functions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LFW-Results"><span class="toc-number">2.8.</span> <span class="toc-text">LFW : Results</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Matlab-Toolbox"><span class="toc-number">3.</span> <span class="toc-text">Matlab Toolbox</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Machine-Learning-with-MATLAB"><span class="toc-number">3.1.</span> <span class="toc-text">Machine Learning with MATLAB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deep-Learning-Toolbox"><span class="toc-number">3.2.</span> <span class="toc-text">Deep Learning Toolbox</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multi-Class-Support-Vector-Machine"><span class="toc-number">3.3.</span> <span class="toc-text">Multi Class Support Vector Machine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Computing-Pairwise-Distances-and-Metrics"><span class="toc-number">3.4.</span> <span class="toc-text">Computing Pairwise Distances and Metrics</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Online-Video"><span class="toc-number">4.</span> <span class="toc-text">Online Video</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Distance-Metric-Learning-for-Kernel-Machines"><span class="toc-number">4.1.</span> <span class="toc-text">Distance Metric Learning for Kernel Machines</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2014/02/26/metric-learning/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&text=Metric Learning"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&is_video=false&description=Metric Learning"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Metric Learning&body=Check out this article: http://www.quxiaofeng.me/2014/02/26/metric-learning/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&title=Metric Learning"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2014/02/26/metric-learning/&name=Metric Learning&description=&lt;p&gt;Online Resources for metric learning.&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

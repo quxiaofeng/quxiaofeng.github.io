@@ -1,1 +1,416 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. Downloading and Installing R R Studio R Language">
+<meta name="keywords" content="coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting Started with R">
+<meta property="og:url" content="http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="1. Downloading and Installing R R Studio R Language">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Getting Started with R">
+<meta name="twitter:description" content="1. Downloading and Installing R R Studio R Language">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>Getting Started with R</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2012/06/28/jekyll-notes/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2012/06/25/opensource-hardware/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&text=Getting Started with R"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&is_video=false&description=Getting Started with R"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting Started with R&body=Check out this article: http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&name=Getting Started with R&description=&lt;h3 id=&#34;1-Downloading-and-Installing-R&#34;&gt;&lt;a href=&#34;#1-Downloading-and-Installing-R&#34; class=&#34;headerlink&#34; title=&#34;1. Downloading and Installing R&#34;&gt;&lt;/a&gt;1. Downloading and Installing R&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;R Studio&lt;/li&gt;
+&lt;li&gt;R Language  &lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Downloading-and-Installing-R"><span class="toc-number">1.</span> <span class="toc-text">1. Downloading and Installing R</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Getting-Help-on-a-Function"><span class="toc-number">2.</span> <span class="toc-text">2. Getting Help on a Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Viewing-the-Supplied-Documentation"><span class="toc-number">3.</span> <span class="toc-text">3. Viewing the Supplied Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Searching-the-Web-for-Help"><span class="toc-number">4.</span> <span class="toc-text">4. Searching the Web for Help</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Reading-Tabular-Datafiles"><span class="toc-number">5.</span> <span class="toc-text">5. Reading Tabular Datafiles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Reading-from-CSV-Files"><span class="toc-number">6.</span> <span class="toc-text">6. Reading from CSV Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Creating-a-Vector"><span class="toc-number">7.</span> <span class="toc-text">7. Creating a Vector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Computing-Basic-Statistics"><span class="toc-number">8.</span> <span class="toc-text">8. Computing Basic Statistics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Initializing-a-Data-Frame-form-Column-Data"><span class="toc-number">9.</span> <span class="toc-text">9. Initializing a Data Frame form Column Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Selecting-Data-Frame-Columns-by-Position"><span class="toc-number">10.</span> <span class="toc-text">10. Selecting Data Frame Columns by Position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Selecting-Data-Frame-Columns-by-Name"><span class="toc-number">11.</span> <span class="toc-text">11. Selecting Data Frame Columns by Name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-Forming-a-Confidence-Interval-for-a-Mean"><span class="toc-number">12.</span> <span class="toc-text">12. Forming a Confidence Interval for a Mean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Forming-a-Confidence-Interval-for-a-Proportion"><span class="toc-number">13.</span> <span class="toc-text">13. Forming a Confidence Interval for a Proportion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Comparing-the-Means-of-Two-Samples"><span class="toc-number">14.</span> <span class="toc-text">14. Comparing the Means of Two Samples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Testing-a-Correlation-for-Significance"><span class="toc-number">15.</span> <span class="toc-text">15. Testing a Correlation for Significance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-Creating-a-Scatter-Plot"><span class="toc-number">16.</span> <span class="toc-text">16. Creating a Scatter Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-Creating-a-Bar-Chart"><span class="toc-number">17.</span> <span class="toc-text">17. Creating a Bar Chart</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-Creating-a-Box-Plot"><span class="toc-number">18.</span> <span class="toc-text">18. Creating a Box Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-Creating-a-Histogram"><span class="toc-number">19.</span> <span class="toc-text">19. Creating a Histogram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Performing-Simple-Linear-Regression"><span class="toc-number">20.</span> <span class="toc-text">20. Performing Simple Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-Performing-Multiple-Linear-Regression"><span class="toc-number">21.</span> <span class="toc-text">21. Performing Multiple Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-Getting-Regression-Statistics"><span class="toc-number">22.</span> <span class="toc-text">22. Getting Regression Statistics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-Diagnosing-a-Linear-Regression"><span class="toc-number">23.</span> <span class="toc-text">23. Diagnosing a Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-Predicting-New-Values"><span class="toc-number">24.</span> <span class="toc-text">24. Predicting New Values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-Accessing-the-Functions-in-a-Package"><span class="toc-number">25.</span> <span class="toc-text">25. Accessing the Functions in a Package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chinese-Translation"><span class="toc-number">26.</span> <span class="toc-text">Chinese Translation</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Getting Started with R
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2012-06-28T08:53:23.000Z" itemprop="datePublished">June 28, 2012</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/coding/">coding</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="1-Downloading-and-Installing-R"><a href="#1-Downloading-and-Installing-R" class="headerlink" title="1. Downloading and Installing R"></a>1. Downloading and Installing R</h3><ul>
+<li>R Studio</li>
+<li>R Language  </li>
+</ul>
+<a id="more"></a>
+<h3 id="2-Getting-Help-on-a-Function"><a href="#2-Getting-Help-on-a-Function" class="headerlink" title="2. Getting Help on a Function"></a>2. Getting Help on a Function</h3><pre>
+<code class="r">
+help(func)
+?(func)
+args(func)
+example(func)
+</code>
+</pre>
+
+<h3 id="3-Viewing-the-Supplied-Documentation"><a href="#3-Viewing-the-Supplied-Documentation" class="headerlink" title="3. Viewing the Supplied Documentation"></a>3. Viewing the Supplied Documentation</h3><pre><code class="r">
+help.start()
+
+</code></pre>
+
+<h3 id="4-Searching-the-Web-for-Help"><a href="#4-Searching-the-Web-for-Help" class="headerlink" title="4. Searching the Web for Help"></a>4. Searching the Web for Help</h3><ul>
+<li>RSiteSearch(“key phrase”)</li>
+<li><a href="http://rseek.org" target="_blank" rel="noopener">http://rseek.org</a></li>
+<li><a href="http://stackoverflow.com" target="_blank" rel="noopener">http://stackoverflow.com</a></li>
+<li><a href="http://stats.stackexchange.com" target="_blank" rel="noopener">http://stats.stackexchange.com</a></li>
+</ul>
+<h3 id="5-Reading-Tabular-Datafiles"><a href="#5-Reading-Tabular-Datafiles" class="headerlink" title="5. Reading Tabular Datafiles"></a>5. Reading Tabular Datafiles</h3><pre>
+<code class="r">
+dfrm <- read.table("filename.txt",="" sep=":" )="" print="" dftm="" <="" code="">
+</-></code></pre>
+
+<h3 id="6-Reading-from-CSV-Files"><a href="#6-Reading-from-CSV-Files" class="headerlink" title="6. Reading from CSV Files"></a>6. Reading from CSV Files</h3><pre>
+<code class="r">
+table <- read.csv("filename",="" header="FALSE)" <="" code="">
+</-></code></pre>
+
+<h3 id="7-Creating-a-Vector"><a href="#7-Creating-a-Vector" class="headerlink" title="7. Creating a Vector"></a>7. Creating a Vector</h3><pre><code class="r">
+v1 <- c(1,2,3)="" v2="" <-="" c("a","b","c")="" mode(c(3.1415,="" "foo"))="" <="" code=""></-></code></pre>
+
+<h3 id="8-Computing-Basic-Statistics"><a href="#8-Computing-Basic-Statistics" class="headerlink" title="8. Computing Basic Statistics"></a>8. Computing Basic Statistics</h3><pre><code class="r">
+mean(x)
+median(x)
+sd(x)
+var(x)
+cor(x,y)
+cov(x,y)
+
+</code></pre>
+
+<h3 id="9-Initializing-a-Data-Frame-form-Column-Data"><a href="#9-Initializing-a-Data-Frame-form-Column-Data" class="headerlink" title="9. Initializing a Data Frame form Column Data"></a>9. Initializing a Data Frame form Column Data</h3><pre><code class="r">
+dfrm <- data.frame(v1,="" v2,="" v3,="" f1,="" f2)="" dfrm="" <-="" as.data.frame(list.of.vectors)="" data.frame(pred1,="" pred2,="" pred3,="" resp)="" data.frame(p1="pred1," p2="pred2," p3="pred3," r="resp)" <="" code=""></-></code></pre>
+
+<h3 id="10-Selecting-Data-Frame-Columns-by-Position"><a href="#10-Selecting-Data-Frame-Columns-by-Position" class="headerlink" title="10. Selecting Data Frame Columns by Position"></a>10. Selecting Data Frame Columns by Position</h3><pre><code class="r">
+dfrm[[n]]
+dfrm[n]
+dfrm[c(n_1, n_2, ..., n_k)]
+dfrm[, n]
+dfrm[, c(n_1, n_2, ..., n_k)]
+dfrm[, vec, drop=FALSE]
+
+</code></pre>
+
+<h3 id="11-Selecting-Data-Frame-Columns-by-Name"><a href="#11-Selecting-Data-Frame-Columns-by-Name" class="headerlink" title="11. Selecting Data Frame Columns by Name"></a>11. Selecting Data Frame Columns by Name</h3><pre><code class="r">
+dfrm[[anme]]
+dfrm$name
+dfrm["name"]
+dfrm[c("name_1", "name_2", ..., "name_k")]
+dfrm[, "name"]
+dfrm[, c("name_1", "name_2", ..., "name_k")]
+
+</code></pre>
+
+<h3 id="12-Forming-a-Confidence-Interval-for-a-Mean"><a href="#12-Forming-a-Confidence-Interval-for-a-Mean" class="headerlink" title="12. Forming a Confidence Interval for a Mean"></a>12. Forming a Confidence Interval for a Mean</h3><pre><code class="r">
+x <- rnorm(50,="" mean="100," sd="50)" t.test(x)="" t.test(x,="" conf.level="0.99)" <="" code=""></-></code></pre>
+
+
+<h3 id="13-Forming-a-Confidence-Interval-for-a-Proportion"><a href="#13-Forming-a-Confidence-Interval-for-a-Proportion" class="headerlink" title="13. Forming a Confidence Interval for a Proportion"></a>13. Forming a Confidence Interval for a Proportion</h3><pre><code class="r">
+prop.test(n, x)
+prop.test(6, 9)
+prop.test(n, x,,p, conf.level=0.99) # 99% confidence level
+
+</code></pre>
+
+
+<h3 id="14-Comparing-the-Means-of-Two-Samples"><a href="#14-Comparing-the-Means-of-Two-Samples" class="headerlink" title="14. Comparing the Means of Two Samples"></a>14. Comparing the Means of Two Samples</h3><pre><code class="r">
+t.test(x, y)
+t.test(x, y, paired=TRUE)
+
+</code></pre>
+
+<h3 id="15-Testing-a-Correlation-for-Significance"><a href="#15-Testing-a-Correlation-for-Significance" class="headerlink" title="15. Testing a Correlation for Significance"></a>15. Testing a Correlation for Significance</h3><pre><code class="r">
+cor.test(x, y)
+cor.test(x, y, method="Spearman")
+
+</code></pre>
+
+<h3 id="16-Creating-a-Scatter-Plot"><a href="#16-Creating-a-Scatter-Plot" class="headerlink" title="16. Creating a Scatter Plot"></a>16. Creating a Scatter Plot</h3><pre><code class="r">
+plot(x, y)
+plot(dfrm)
+
+</code></pre>
+
+<h3 id="17-Creating-a-Bar-Chart"><a href="#17-Creating-a-Bar-Chart" class="headerlink" title="17. Creating a Bar Chart"></a>17. Creating a Bar Chart</h3><pre><code class="r">
+barplot(c(height1, height2, height3))
+
+barplot(heights,
+        main="Mean Temp. by Month"
+        names.arg=c("May", "Jun", "July", "Aug", "Sep"),
+        ylab="Temp (deg. F)")
+
+</code></pre>
+
+
+<h3 id="18-Creating-a-Box-Plot"><a href="#18-Creating-a-Box-Plot" class="headerlink" title="18. Creating a Box Plot"></a>18. Creating a Box Plot</h3><pre><code class="r">
+boxplot(x)
+
+</code></pre>
+
+<h3 id="19-Creating-a-Histogram"><a href="#19-Creating-a-Histogram" class="headerlink" title="19. Creating a Histogram"></a>19. Creating a Histogram</h3><pre><code class="r">
+data(Cars93, package="MASS")
+hist(Cars93$MPG.city)
+hist(Cars93$MPG.city, 20)
+hist(Cars93$MPG.city, 20, main="City MPG (1993)", xlab="MPG")
+
+</code></pre>
+
+<h3 id="20-Performing-Simple-Linear-Regression"><a href="#20-Performing-Simple-Linear-Regression" class="headerlink" title="20. Performing Simple Linear Regression"></a>20. Performing Simple Linear Regression</h3><pre><code class="r">
+lm(y ~ x)
+lm(y ~ x, data=dfrm) # Take x and y from dfrm
+
+</code></pre>
+
+
+<h3 id="21-Performing-Multiple-Linear-Regression"><a href="#21-Performing-Multiple-Linear-Regression" class="headerlink" title="21. Performing Multiple Linear Regression"></a>21. Performing Multiple Linear Regression</h3><pre><code class="r">
+y=c(6.584519, 6.425215, 7.830578, 2.757777, 5.794566, 7.314611, 2.533638, 8.696910, 6.304464, 8.095094)
+u=c(0.79939065, -2.31338537, 1.71736899, 1.27652888, 0.39643488, 1.82247760, -1.34186107, 0.75946803, 0.92000133, 1.02341093)
+v=c(2.7971413, 2.7836201, 2.7570401, 0.4191765, 2.3785468, 1.8291302, 2.3472593, 3.4028180, 2.0654513, 2.6729252)
+w=c(4.366557, 4.515084, 3.865557, 2.547935, 3.265971, 4.518522, 2.570884, 4.442560, 2.835248, 3.868573)
+lm(y ~ u + v + w)
+lm(y ~ u + v + w, data=dfrm)
+
+</code></pre>
+
+
+<h3 id="22-Getting-Regression-Statistics"><a href="#22-Getting-Regression-Statistics" class="headerlink" title="22. Getting Regression Statistics"></a>22. Getting Regression Statistics</h3><pre><code class="r">
+y=c(6.584519, 6.425215, 7.830578, 2.757777, 5.794566, 7.314611, 2.533638, 8.696910, 6.304464, 8.095094)
+u=c(0.79939065, -2.31338537, 1.71736899, 1.27652888, 0.39643488, 1.82247760, -1.34186107, 0.75946803, 0.92000133, 1.02341093)
+v=c(2.7971413, 2.7836201, 2.7570401, 0.4191765, 2.3785468, 1.8291302, 2.3472593, 3.4028180, 2.0654513, 2.6729252)
+w=c(4.366557, 4.515084, 3.865557, 2.547935, 3.265971, 4.518522, 2.570884, 4.442560, 2.835248, 3.868573)
+m <- lm(y="" ~="" u="" +="" v="" w)="" summary(m)="" anova(m)="" coefficients(m)="" coef(m)="" confint(m)="" deviance(m)="" effects(m)="" fitted(m)="" residuals(m)="" resid(m)="" vcov(m)="" <="" code=""></-></code></pre>
+
+<h3 id="23-Diagnosing-a-Linear-Regression"><a href="#23-Diagnosing-a-Linear-Regression" class="headerlink" title="23. Diagnosing a Linear Regression"></a>23. Diagnosing a Linear Regression</h3><pre><code class="r">
+m <- lm(y="" ~="" x)="" plot(m)="" library(car)="" outlier.test(m)="" <="" code=""></-></code></pre>
+
+<h3 id="24-Predicting-New-Values"><a href="#24-Predicting-New-Values" class="headerlink" title="24. Predicting New Values"></a>24. Predicting New Values</h3><pre><code class="r">
+m <- lm(y="" ~="" u="" +="" v="" w)="" preds="" <-="" data.frame(u="3.1," w="5.5)" predict(m,="" newdata="preds)" data.frame(="" 3.1,="" 3.2,="" 3.3),="" 4.0,="" 4.1,="" 4.2),="" 5.5,="" 5,7,="" 5.9)="" )="" <="" code=""></-></code></pre>
+
+<h3 id="25-Accessing-the-Functions-in-a-Package"><a href="#25-Accessing-the-Functions-in-a-Package" class="headerlink" title="25. Accessing the Functions in a Package"></a>25. Accessing the Functions in a Package</h3><pre><code class="r">
+library(packagename)
+library(MASS)
+lda(f ~ x + y)
+detach(package:MASS)
+
+</code></pre>
+
+<h3 id="Chinese-Translation"><a href="#Chinese-Translation" class="headerlink" title="Chinese Translation"></a>Chinese Translation</h3><ul>
+<li>Chen Gang has translated <a href="http://gossipcoder.com/?tag=r%E5%85%A5%E9%97%A825%E6%8B%9B" target="_blank" rel="noopener">some sections</a> of this book.</li>
+<li>Yu Guangchuang has recreated <a href="http://ygc.name/2011/08/17/ggplot2-version-figures-25-recipes-started-r/" target="_blank" rel="noopener">the figures</a> of this book</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Downloading-and-Installing-R"><span class="toc-number">1.</span> <span class="toc-text">1. Downloading and Installing R</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Getting-Help-on-a-Function"><span class="toc-number">2.</span> <span class="toc-text">2. Getting Help on a Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Viewing-the-Supplied-Documentation"><span class="toc-number">3.</span> <span class="toc-text">3. Viewing the Supplied Documentation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Searching-the-Web-for-Help"><span class="toc-number">4.</span> <span class="toc-text">4. Searching the Web for Help</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Reading-Tabular-Datafiles"><span class="toc-number">5.</span> <span class="toc-text">5. Reading Tabular Datafiles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Reading-from-CSV-Files"><span class="toc-number">6.</span> <span class="toc-text">6. Reading from CSV Files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Creating-a-Vector"><span class="toc-number">7.</span> <span class="toc-text">7. Creating a Vector</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-Computing-Basic-Statistics"><span class="toc-number">8.</span> <span class="toc-text">8. Computing Basic Statistics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Initializing-a-Data-Frame-form-Column-Data"><span class="toc-number">9.</span> <span class="toc-text">9. Initializing a Data Frame form Column Data</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-Selecting-Data-Frame-Columns-by-Position"><span class="toc-number">10.</span> <span class="toc-text">10. Selecting Data Frame Columns by Position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Selecting-Data-Frame-Columns-by-Name"><span class="toc-number">11.</span> <span class="toc-text">11. Selecting Data Frame Columns by Name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-Forming-a-Confidence-Interval-for-a-Mean"><span class="toc-number">12.</span> <span class="toc-text">12. Forming a Confidence Interval for a Mean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Forming-a-Confidence-Interval-for-a-Proportion"><span class="toc-number">13.</span> <span class="toc-text">13. Forming a Confidence Interval for a Proportion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-Comparing-the-Means-of-Two-Samples"><span class="toc-number">14.</span> <span class="toc-text">14. Comparing the Means of Two Samples</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-Testing-a-Correlation-for-Significance"><span class="toc-number">15.</span> <span class="toc-text">15. Testing a Correlation for Significance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-Creating-a-Scatter-Plot"><span class="toc-number">16.</span> <span class="toc-text">16. Creating a Scatter Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-Creating-a-Bar-Chart"><span class="toc-number">17.</span> <span class="toc-text">17. Creating a Bar Chart</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-Creating-a-Box-Plot"><span class="toc-number">18.</span> <span class="toc-text">18. Creating a Box Plot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-Creating-a-Histogram"><span class="toc-number">19.</span> <span class="toc-text">19. Creating a Histogram</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Performing-Simple-Linear-Regression"><span class="toc-number">20.</span> <span class="toc-text">20. Performing Simple Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-Performing-Multiple-Linear-Regression"><span class="toc-number">21.</span> <span class="toc-text">21. Performing Multiple Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-Getting-Regression-Statistics"><span class="toc-number">22.</span> <span class="toc-text">22. Getting Regression Statistics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-Diagnosing-a-Linear-Regression"><span class="toc-number">23.</span> <span class="toc-text">23. Diagnosing a Linear Regression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24-Predicting-New-Values"><span class="toc-number">24.</span> <span class="toc-text">24. Predicting New Values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25-Accessing-the-Functions-in-a-Package"><span class="toc-number">25.</span> <span class="toc-text">25. Accessing the Functions in a Package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chinese-Translation"><span class="toc-number">26.</span> <span class="toc-text">Chinese Translation</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&text=Getting Started with R"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&is_video=false&description=Getting Started with R"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Getting Started with R&body=Check out this article: http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&title=Getting Started with R"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2012/06/28/getting-started-with-r/&name=Getting Started with R&description=&lt;h3 id=&#34;1-Downloading-and-Installing-R&#34;&gt;&lt;a href=&#34;#1-Downloading-and-Installing-R&#34; class=&#34;headerlink&#34; title=&#34;1. Downloading and Installing R&#34;&gt;&lt;/a&gt;1. Downloading and Installing R&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;R Studio&lt;/li&gt;
+&lt;li&gt;R Language  &lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+

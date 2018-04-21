@@ -1,1 +1,284 @@
-<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel="shortcut icon" href=/static/favicon.ico><title>Xiaofeng QU</title><link href=/static/css/app.735a96676d004a3ab4342a23d617337f.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=/static/js/manifest.9c14e4c25ff8a4ffed18.js></script><script type=text/javascript src=/static/js/vendor.e12dc8c9af1f7aa12436.js></script><script type=text/javascript src=/static/js/app.0e5d9a3657c7938b569f.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.">
+<meta name="keywords" content="cmd,qt,lib,c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ Command Line Parser">
+<meta property="og:url" content="http://www.quxiaofeng.me/2012/10/27/command-line-parser/index.html">
+<meta property="og:site_name" content="Xiaofeng QU">
+<meta property="og:description" content="Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-21T09:52:42.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++ Command Line Parser">
+<meta name="twitter:description" content="Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/avatar.png">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/avatar.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.png">
+          
+        
+    
+    <!-- title -->
+    <title>C++ Command Line Parser</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2012/11/16/qt-reflection/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2012/10/27/matlab/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2012/10/27/command-line-parser/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&text=C++ Command Line Parser"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&is_video=false&description=C++ Command Line Parser"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ Command Line Parser&body=Check out this article: http://www.quxiaofeng.me/2012/10/27/command-line-parser/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&name=C++ Command Line Parser&description=&lt;p&gt;Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goal"><span class="toc-number">1.</span> <span class="toc-text">Goal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Current-Example-project"><span class="toc-number">2.</span> <span class="toc-text">Current Example project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Resources"><span class="toc-number">3.</span> <span class="toc-text">Resources</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        C++ Command Line Parser
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xiaofeng QU</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2012-10-27T11:33:33.000Z" itemprop="datePublished">October 27, 2012</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/c/">c++</a>, <a class="tag-link" href="/tags/cmd/">cmd</a>, <a class="tag-link" href="/tags/lib/">lib</a>, <a class="tag-link" href="/tags/qt/">qt</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.</p>
+<a id="more"></a>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Just like the git suite.</p>
+<pre><code>git commit -asm &apos;new commit&apos;    
+</code></pre><ul>
+<li><p>Both short and long form are acceptable.    </p>
+</li>
+<li><p>Can be combined together. It is really compact and really handy to use in this form.    </p>
+</li>
+</ul>
+<h2 id="Current-Example-project"><a href="#Current-Example-project" class="headerlink" title="Current Example project"></a>Current Example project</h2><p><a href="http://www.hackorama.com/anyoption/" target="_blank" rel="noopener">AnyOption</a> is used in the <a href="https://github.com/quxiaofeng/dks_software" target="_blank" rel="noopener">example project</a>.</p>
+<p>It is working well, and the only problem is annoying warnings of strcpy(). Because the visual studio recommends to use strcpy_s(). And also the std::cout can not be seen in Qt debug console.<br>Another problem is AnyOption can read options from a file with “:” separating “item:value” pairs. This kind of non-standard format is not very comfortable to use.</p>
+<h2 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h2><ul>
+<li><p>AnyOption - C/C++ Command line and resource file option parsing   </p>
+<ul>
+<li><p><a href="http://www.hackorama.com/anyoption/" target="_blank" rel="noopener">Home Page</a>    </p>
+</li>
+<li><p><a href="https://github.com/hackorama/AnyOption/" target="_blank" rel="noopener">Github Project Page</a>    </p>
+</li>
+<li><p>Latest version by hamann<a href="https://github.com/hamann/AnyOption" target="_blank" rel="noopener">hamann/AnyOption</a>    </p>
+</li>
+</ul>
+</li>
+<li><p>ArgvParser - C++ class for convenient parsing of command line options  </p>
+<ul>
+<li><a href="http://mih.voxindeserto.de/argvparser.html" target="_blank" rel="noopener">Home Page</a>    </li>
+</ul>
+</li>
+<li><p>QtArg - a small C++ library based on the Qt 4 for parsing command line arguments.    </p>
+<ul>
+<li><p><a href="http://code.google.com/p/qtargparser/" target="_blank" rel="noopener">Home Page</a>    </p>
+</li>
+<li><p><a href="http://qtargparser.googlecode.com/files/QtArg-1.2.1-src.zip" target="_blank" rel="noopener">Download</a>   </p>
+</li>
+</ul>
+</li>
+<li><p>KCmdLineArgs - A class for command-line argument handling.  </p>
+<ul>
+<li><a href="http://api.kde.org/4.x-api/kdelibs-apidocs/kdecore/html/classKCmdLineArgs.html" target="_blank" rel="noopener">Home Page</a>    </li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goal"><span class="toc-number">1.</span> <span class="toc-text">Goal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Current-Example-project"><span class="toc-number">2.</span> <span class="toc-text">Current Example project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Resources"><span class="toc-number">3.</span> <span class="toc-text">Resources</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://www.quxiaofeng.me/2012/10/27/command-line-parser/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&text=C++ Command Line Parser"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&is_video=false&description=C++ Command Line Parser"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C++ Command Line Parser&body=Check out this article: http://www.quxiaofeng.me/2012/10/27/command-line-parser/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&title=C++ Command Line Parser"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://www.quxiaofeng.me/2012/10/27/command-line-parser/&name=C++ Command Line Parser&description=&lt;p&gt;Resources and libraries about how to parse command line arguments. Try to make program receive standard and flexible command line arguments.&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Xiaofeng QU
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Blog</a></li>
+         
+          <li><a href="/research/">Research</a></li>
+         
+          <li><a href="/links/">Links</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
