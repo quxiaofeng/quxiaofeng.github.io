@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="software,writing,website," />
+  <meta name="keywords" content="quxiaofeng,biometrics,research,LaTeX" />
 
 
 
@@ -41,18 +41,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="Two grammar checkers: grammarly.com and 1checker.com.">
-<meta name="keywords" content="software,writing,website">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Grammar Checkers">
-<meta property="og:url" content="http://www.quxiaofeng.me/2014/05/16/grammar-checkers/index.html">
+<meta name="description" content="Imgage Upload                             function imgPreview(fileDom) {             //判断是否支持FileReader             if (window.FileReader) {                 var reader = new FileReader();">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Xiaofeng QU">
+<meta property="og:url" content="http://www.quxiaofeng.me/apps/imageupload.html">
 <meta property="og:site_name" content="Xiaofeng QU">
-<meta property="og:description" content="Two grammar checkers: grammarly.com and 1checker.com.">
+<meta property="og:description" content="Imgage Upload                             function imgPreview(fileDom) {             //判断是否支持FileReader             if (window.FileReader) {                 var reader = new FileReader();">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-05-03T12:51:01.854Z">
+<meta property="og:updated_time" content="2018-05-03T12:51:01.858Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grammar Checkers">
-<meta name="twitter:description" content="Two grammar checkers: grammarly.com and 1checker.com.">
+<meta name="twitter:title" content="Xiaofeng QU">
+<meta name="twitter:description" content="Imgage Upload                             function imgPreview(fileDom) {             //判断是否支持FileReader             if (window.FileReader) {                 var reader = new FileReader();">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +61,13 @@
   };
 </script>
 
-  <title> Grammar Checkers | Xiaofeng QU </title>
+  <title>
+  
+
+  
+     | Xiaofeng QU
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -89,7 +94,7 @@
 
 
 
-  <div class="container one-column page-post-detail">
+  <div class="container one-column ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -176,150 +181,209 @@
 
   <div id="posts" class="posts-expand">
     
+    
+      <!DOCTYPE html>
+<html>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<head>
+    <meta charset="UTF-8">
+    <title>Imgage Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript">
+        function imgPreview(fileDom) {
+            //判断是否支持FileReader
+            if (window.FileReader) {
+                var reader = new FileReader();
+            } else {
+                alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+            }
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              Grammar Checkers
-            
-          
-        </h1>
-      
+            //获取文件
+            var file = fileDom.files[0];
+            var imageType = /^image\//;
 
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2014-05-16T04:29:58+00:00" content="May 16, 2014">
-            May 16, 2014
-          </time>
-        </span>
+            var f = document.getElementById('imgFile').value;
+            //是否是图片
+            if (!imageType.test(file.type)) {
+                alert("请选择图片")
+                return false;
+            }
 
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/language/" itemprop="url" rel="index">
-                  <span itemprop="name">language</span>
-                </a>
-              </span>
+            //是否是图片
+            if (!/(jpg|jpeg|JPEG|JPG)$/.test(f)) {
+                alert("图片类型必须是jpeg,jpg中的一种")
+                return false;
+            }
 
-              
-              
+            if (file) {
+                var fileSize = 0;
+                if (file.size > 1024 * 1024)
+                    fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+                else
+                    fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+                document.getElementById('fileName').innerHTML = '名称: ' + file.name;
+                document.getElementById('fileSize').innerHTML = '大小: ' + fileSize;
+                document.getElementById('fileType').innerHTML = '类型: ' + file.type;
+            }
+            //读取完成
+            reader.onload = function (e) {
+                //获取图片dom
+                var img = document.getElementById("preview");
+                //图片路径设置为读取的图片
+                img.src = e.target.result;
+                var formData = new FormData();
+                formData.append("img", file);
+                var Url = "http://alab-vision.aqara.cn/lock/direction/predict";
+                $.ajax({
+                    url: Url,
+                    type: 'POST',
+                    crossDomain: true,
+                    xhrFields: "'Access-Control-Allow-Origin': '*'",
+                    data: formData,
+                    // 告诉jQuery不要去处理发送的数据
+                    processData: false,
+                    // 告诉jQuery不要去设置Content-Type请求头
+                    contentType: false,
+                    beforeSend: function () {
+                        console.log("正在进行，请稍候");
+                        document.getElementById("tips").innerHTML = '提交中... 请稍候!';  
+                    },
+                    success: function (res) { 
+                        document.getElementById("relult").innerHTML = 'result: ' + JSON.stringify(res);
+                    },
+                    error: function (res) {
+                        document.getElementById("relult").innerHTML = 'result: ' + JSON.stringify(res);
+                    },
+                    complete: function (res) { 
+                        document.getElementById("tips").innerHTML = '处理完成!';  
+                    }
+                });
 
-            
-          </span>
-        
+            };
+            reader.readAsDataURL(file);
 
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/05/16/grammar-checkers/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2014/05/16/grammar-checkers/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
+        }
+    </script>
+</head>
+<style>
+    .container {
+        /* padding: 20px; */
+        margin-top: 10px;
+        text-align: center; 
+    }
 
-    <div class="post-body">
+    .mymargintop {
+        margin-top: 10px;
+    }
 
-      
-      
+    .file {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+    }
 
-      
-        <span itemprop="articleBody"><p>Two grammar checkers: grammarly.com and 1checker.com.</p>
-<a id="more"></a>
-<p>I have been using two different grammar checkers.</p>
-<ol>
-<li><p><a href="http://www.grammarly.com/" target="_blank" rel="noopener">Grammarly.com</a>, one-year subscription user.</p>
-</li>
-<li><p><a href="http://www.1checker.com/" target="_blank" rel="noopener">1checker</a>, free user.</p>
-</li>
-</ol>
-<hr>
-<h3 id="Here-is-a-simple-comparison-table"><a href="#Here-is-a-simple-comparison-table" class="headerlink" title="Here is a simple comparison table."></a>Here is a simple comparison table.</h3><table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center">Grammarly</th>
-<th style="text-align:center">1checker</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Online function</td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Standalone software</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Word Plugin</td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Outlook Plugin</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Yes</td>
-</tr>
-</tbody>
-</table>
-</span>
-      
+    .file label {
+        display: inline-block;
+    }
+
+    .userdefined-file {
+        position: absolute;
+        top: 0;
+        /* left: 60px; */
+        z-index: 2;
+        /* width: 300px; */
+        height: 40px;
+        line-height: 40px;
+        font-size: 0;
+        /*应对子元素为 inline-block 引起的外边距*/
+    }
+
+    .userdefined-file input[type="text"] {
+        display: inline-block;
+        vertical-align: middle;
+        padding-right: 14px;
+        padding-left: 14px;
+        width: 220px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .userdefined-file button {
+        display: inline-block;
+        vertical-align: middle;
+        width: 300px;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        background-color: #f54;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+    .tips{
+        background-color: #f54;
+    }
+
+    .file input[type="file"] { 
+        position: absolute;
+        top: 0;
+        left: -2px;
+        z-index: 3;
+        opacity: 0;
+        width: 300px;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+    .activityForm {
+        width: 100px; 
+        text-align: center;
+        /* margin-left: 42%; */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <img style="width:300px; height:300px;" id="preview">
+        <br>
+        <div class="mymargintop">图片格式仅限jpeg,jpg </div>
+
+        <!-- <a href="javascript:;" class="upload">选择文件
+            <input type="file" name="file" id="imgFile" class="mymargintop change" onchange="imgPreview(this)" />
+        </a> -->
+        <center>
+        <div style="width:300px;"> 
+                    　　<div class="file"> 
+                        <div class="userdefined-file"> 
+                        　　<button type="button">上传</button>
+                        </div>
+                        <input type="file" name="file" id="imgFile" onchange="imgPreview(this)">            
+                    　　</div> 
+        </div>
+        </center>
+        <div class="content">
+            <div class="mymargintop" id="fileName"></div>
+            <div class="mymargintop" id="fileSize"></div>
+            <div class="mymargintop" id="fileType"></div>
+            <div class="mymargintop" id="tips"></div>
+            <div class="mymargintop" id="relult"></div>
+        </div>
     </div>
 
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/software/" rel="tag">#software</a>
-          
-            <a href="/tags/writing/" rel="tag">#writing</a>
-          
-            <a href="/tags/website/" rel="tag">#website</a>
-          
-        </div>
-      
+</body>
+<script src="https://cdn.cnbj2.fds.api.mi-img.com/cdn/lumi/pc/js/jquery.min.js"></script>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2014/08/07/does-nihao-come-from-hello/" rel="prev">“你好”是什么意思？</a>
-            
-          </div>
-
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2014/05/13/hexo-site-config/" rel="next">Hexo Generated Blog</a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
+</html>
+    
   </div>
 
  </div>
@@ -350,15 +414,6 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table Of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
       
 
       <section class="site-overview">
@@ -442,17 +497,6 @@
       </section>
 
       
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
-          <div class="post-toc">
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Here-is-a-simple-comparison-table"><span class="nav-number">1.</span> <span class="nav-text">Here is a simple comparison table.</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </section>
-      
 
     </div>
   </aside>
@@ -501,9 +545,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'quxiaofenggithub';
-      var disqus_identifier = '2014/05/16/grammar-checkers/';
-      var disqus_title = 'Grammar Checkers';
-      var disqus_url = 'http://www.quxiaofeng.me/2014/05/16/grammar-checkers/';
+      var disqus_identifier = 'apps/imageupload.html';
+      var disqus_title = '';
+      var disqus_url = 'http://www.quxiaofeng.me/apps/imageupload.html';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -539,165 +583,6 @@
 
 
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
-    }
-  });
-</script>
-
-
 
   <script type="text/javascript">
     $(document).ready(function () {
