@@ -28,8 +28,8 @@
             }
 
             //是否是图片
-            if (!/(jpg|jpeg|JPEG|JPG)$/.test(f)) {
-                alert("图片类型必须是jpeg,jpg中的一种")
+            if (!/(jpg|jpeg|JPEG|JPG|png|PNG)$/.test(f)) {
+                alert("图片类型必须是jpeg,jpg,png中的一种")
                 return false;
             }
 
@@ -51,7 +51,7 @@
                 img.src = e.target.result;
                 var formData = new FormData();
                 formData.append("img", file);
-                var Url = "http://alab-vision.aqara.cn/lock/direction/predict";
+                var Url = "http://alab-vision2.aqara.cn/product/predict";
                 $.ajax({
                     url: Url,
                     type: 'POST',
@@ -65,6 +65,7 @@
                     beforeSend: function () {
                         console.log("正在进行，请稍候");
                         document.getElementById("tips").innerHTML = '提交中... 请稍候!';  
+                        document.getElementById("relult").innerHTML = '';
                     },
                     success: function (res) { 
                         document.getElementById("relult").innerHTML = 'result: ' + JSON.stringify(res);

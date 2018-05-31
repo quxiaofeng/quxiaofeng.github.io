@@ -65,6 +65,7 @@
                     beforeSend: function () {
                         console.log("正在进行，请稍候");
                         document.getElementById("tips").innerHTML = '提交中... 请稍候!';  
+                        document.getElementById("relult").innerHTML = '';
                     },
                     success: function (res) { 
                         document.getElementById("relult").innerHTML = 'result: ' + JSON.stringify(res);

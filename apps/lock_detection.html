@@ -51,7 +51,7 @@
                 img.src = e.target.result;
                 var formData = new FormData();
                 formData.append("img", file);
-                var Url = "http://alab-vision.aqara.cn/lock/direction/predict";
+                var Url = "http://192.168.100.58:8008/lock/detection/predict";
                 $.ajax({
                     url: Url,
                     type: 'POST',
@@ -65,6 +65,7 @@
                     beforeSend: function () {
                         console.log("正在进行，请稍候");
                         document.getElementById("tips").innerHTML = '提交中... 请稍候!';  
+                        document.getElementById("relult").innerHTML = '';
                     },
                     success: function (res) { 
                         document.getElementById("relult").innerHTML = 'result: ' + JSON.stringify(res);
