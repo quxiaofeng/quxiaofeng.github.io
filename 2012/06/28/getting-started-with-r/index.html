@@ -49,7 +49,7 @@
 <meta property="og:site_name" content="Xiaofeng QU">
 <meta property="og:description" content="1. Downloading and Installing R R Studio R Language">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-18T04:20:32.574Z">
+<meta property="og:updated_time" content="2019-04-15T20:39:39.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting Started with R">
 <meta name="twitter:description" content="1. Downloading and Installing R R Studio R Language">
@@ -65,7 +65,7 @@
   <title> Getting Started with R | Xiaofeng QU </title>
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
@@ -92,7 +92,7 @@
   <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
   <a href="/" class="brand" rel="start">
@@ -177,7 +177,7 @@
   <div id="posts" class="posts-expand">
     
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
 
       
@@ -204,7 +204,7 @@
           <span class="post-category">
             &nbsp; | &nbsp; In
             
-              <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                 <a href="/categories/coding/" itemprop="url" rel="index">
                   <span itemprop="name">coding</span>
                 </a>
@@ -263,16 +263,16 @@ help.start()
 </ul>
 <h3 id="5-Reading-Tabular-Datafiles"><a href="#5-Reading-Tabular-Datafiles" class="headerlink" title="5. Reading Tabular Datafiles"></a>5. Reading Tabular Datafiles</h3><pre>
 <code class="r">
-dfrm <- read.table("filename.txt",="" sep=":" )="" print="" dftm="" <="" code="">
+dfrm <- read.table("filename.txt", sep=":" ) print dftm < code>
 </-></code></pre>
 
 <h3 id="6-Reading-from-CSV-Files"><a href="#6-Reading-from-CSV-Files" class="headerlink" title="6. Reading from CSV Files"></a>6. Reading from CSV Files</h3><pre>
 <code class="r">
-table <- read.csv("filename",="" header="FALSE)" <="" code="">
+table <- read.csv("filename", header="FALSE)" < code>
 </-></code></pre>
 
 <h3 id="7-Creating-a-Vector"><a href="#7-Creating-a-Vector" class="headerlink" title="7. Creating a Vector"></a>7. Creating a Vector</h3><pre><code class="r">
-v1 <- c(1,2,3)="" v2="" <-="" c("a","b","c")="" mode(c(3.1415,="" "foo"))="" <="" code=""></-></code></pre>
+v1 <- c(1,2,3) v2 <- c("a","b","c") mode(c(3.1415, "foo")) < code></-></code></pre>
 
 <h3 id="8-Computing-Basic-Statistics"><a href="#8-Computing-Basic-Statistics" class="headerlink" title="8. Computing Basic Statistics"></a>8. Computing Basic Statistics</h3><pre><code class="r">
 mean(x)
@@ -285,7 +285,7 @@ cov(x,y)
 </code></pre>
 
 <h3 id="9-Initializing-a-Data-Frame-form-Column-Data"><a href="#9-Initializing-a-Data-Frame-form-Column-Data" class="headerlink" title="9. Initializing a Data Frame form Column Data"></a>9. Initializing a Data Frame form Column Data</h3><pre><code class="r">
-dfrm <- data.frame(v1,="" v2,="" v3,="" f1,="" f2)="" dfrm="" <-="" as.data.frame(list.of.vectors)="" data.frame(pred1,="" pred2,="" pred3,="" resp)="" data.frame(p1="pred1," p2="pred2," p3="pred3," r="resp)" <="" code=""></-></code></pre>
+dfrm <- data.frame(v1, v2, v3, f1, f2) dfrm <- as.data.frame(list.of.vectors) data.frame(pred1, pred2, pred3, resp) data.frame(p1="pred1," p2="pred2," p3="pred3," r="resp)" < code></-></code></pre>
 
 <h3 id="10-Selecting-Data-Frame-Columns-by-Position"><a href="#10-Selecting-Data-Frame-Columns-by-Position" class="headerlink" title="10. Selecting Data Frame Columns by Position"></a>10. Selecting Data Frame Columns by Position</h3><pre><code class="r">
 dfrm[[n]]
@@ -308,7 +308,7 @@ dfrm[, c("name_1", "name_2", ..., "name_k")]
 </code></pre>
 
 <h3 id="12-Forming-a-Confidence-Interval-for-a-Mean"><a href="#12-Forming-a-Confidence-Interval-for-a-Mean" class="headerlink" title="12. Forming a Confidence Interval for a Mean"></a>12. Forming a Confidence Interval for a Mean</h3><pre><code class="r">
-x <- rnorm(50,="" mean="100," sd="50)" t.test(x)="" t.test(x,="" conf.level="0.99)" <="" code=""></-></code></pre>
+x <- rnorm(50, mean="100," sd="50)" t.test(x) t.test(x, conf.level="0.99)" < code></-></code></pre>
 
 
 <h3 id="13-Forming-a-Confidence-Interval-for-a-Proportion"><a href="#13-Forming-a-Confidence-Interval-for-a-Proportion" class="headerlink" title="13. Forming a Confidence Interval for a Proportion"></a>13. Forming a Confidence Interval for a Proportion</h3><pre><code class="r">
@@ -384,13 +384,13 @@ y=c(6.584519, 6.425215, 7.830578, 2.757777, 5.794566, 7.314611, 2.533638, 8.6969
 u=c(0.79939065, -2.31338537, 1.71736899, 1.27652888, 0.39643488, 1.82247760, -1.34186107, 0.75946803, 0.92000133, 1.02341093)
 v=c(2.7971413, 2.7836201, 2.7570401, 0.4191765, 2.3785468, 1.8291302, 2.3472593, 3.4028180, 2.0654513, 2.6729252)
 w=c(4.366557, 4.515084, 3.865557, 2.547935, 3.265971, 4.518522, 2.570884, 4.442560, 2.835248, 3.868573)
-m <- lm(y="" ~="" u="" +="" v="" w)="" summary(m)="" anova(m)="" coefficients(m)="" coef(m)="" confint(m)="" deviance(m)="" effects(m)="" fitted(m)="" residuals(m)="" resid(m)="" vcov(m)="" <="" code=""></-></code></pre>
+m <- lm(y ~ u + v w) summary(m) anova(m) coefficients(m) coef(m) confint(m) deviance(m) effects(m) fitted(m) residuals(m) resid(m) vcov(m) < code></-></code></pre>
 
 <h3 id="23-Diagnosing-a-Linear-Regression"><a href="#23-Diagnosing-a-Linear-Regression" class="headerlink" title="23. Diagnosing a Linear Regression"></a>23. Diagnosing a Linear Regression</h3><pre><code class="r">
-m <- lm(y="" ~="" x)="" plot(m)="" library(car)="" outlier.test(m)="" <="" code=""></-></code></pre>
+m <- lm(y ~ x) plot(m) library(car) outlier.test(m) < code></-></code></pre>
 
 <h3 id="24-Predicting-New-Values"><a href="#24-Predicting-New-Values" class="headerlink" title="24. Predicting New Values"></a>24. Predicting New Values</h3><pre><code class="r">
-m <- lm(y="" ~="" u="" +="" v="" w)="" preds="" <-="" data.frame(u="3.1," w="5.5)" predict(m,="" newdata="preds)" data.frame(="" 3.1,="" 3.2,="" 3.3),="" 4.0,="" 4.1,="" 4.2),="" 5.5,="" 5,7,="" 5.9)="" )="" <="" code=""></-></code></pre>
+m <- lm(y ~ u + v w) preds <- data.frame(u="3.1," w="5.5)" predict(m, newdata="preds)" data.frame( 3.1, 3.2, 3.3), 4.0, 4.1, 4.2), 5.5, 5,7, 5.9) ) < code></-></code></pre>
 
 <h3 id="25-Accessing-the-Functions-in-a-Package"><a href="#25-Accessing-the-Functions-in-a-Package" class="headerlink" title="25. Accessing the Functions in a Package"></a>25. Accessing the Functions in a Package</h3><pre><code class="r">
 library(packagename)
@@ -485,7 +485,7 @@ detach(package:MASS)
       
 
       <section class="site-overview">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/avatar.png" alt="Xiaofeng QU" itemprop="image">
           <p class="site-author-name" itemprop="name">Xiaofeng QU</p>
         </div>
