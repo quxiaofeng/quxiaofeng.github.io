@@ -399,9 +399,9 @@
             
             <tag> french </tag>
             
-            <tag> android </tag>
-            
             <tag> german </tag>
+            
+            <tag> android </tag>
             
             <tag> spanish </tag>
             
@@ -772,9 +772,9 @@
       
         <tags>
             
-            <tag> python </tag>
-            
             <tag> coding </tag>
+            
+            <tag> python </tag>
             
             <tag> c++ </tag>
             
@@ -865,9 +865,9 @@
             
             <tag> algorithm </tag>
             
-            <tag> matlab </tag>
-            
             <tag> svm </tag>
+            
+            <tag> matlab </tag>
             
         </tags>
       
@@ -1336,9 +1336,9 @@
       
         <tags>
             
-            <tag> ruby </tag>
-            
             <tag> coding </tag>
+            
+            <tag> ruby </tag>
             
         </tags>
       
@@ -1755,9 +1755,9 @@
       
         <tags>
             
-            <tag> device </tag>
-            
             <tag> design </tag>
+            
+            <tag> device </tag>
             
         </tags>
       
@@ -1782,9 +1782,9 @@
       
         <tags>
             
-            <tag> device </tag>
-            
             <tag> design </tag>
+            
+            <tag> device </tag>
             
         </tags>
       
@@ -1809,11 +1809,11 @@
       
         <tags>
             
+            <tag> device </tag>
+            
             <tag> linear CCD </tag>
             
             <tag> palmprint </tag>
-            
-            <tag> device </tag>
             
         </tags>
       
